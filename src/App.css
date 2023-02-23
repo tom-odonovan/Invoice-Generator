@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+body {
+    background-color: #f1f1f1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+    margin: 1.25rem;
+    padding: 1.25rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media only screen and (min-width: 900px) {
+    main {
+        max-width: 780px;
+        margin: 20px auto;
+    }
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+header h1 {
+    width: fit-content;
 }
 
-.App-link {
-  color: #61dafb;
+.publish-btns {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.publish-btns li {
+    list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.vendor-details {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    flex-direction: column;
+}
+.client-details {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.vendor-details h2 {
+   font-weight: initial;
+}
+
+.client-details h2 {
+    font-weight: initial;
+}
+
+.invoice-id {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.invoice-id li {
+    list-style: none;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+footer li {
+    margin: 5px 5px;
+    list-style: none;
 }
