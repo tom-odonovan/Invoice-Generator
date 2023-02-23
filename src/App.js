@@ -1,4 +1,13 @@
 import './App.css'
+import VendorDetails from './components/VendorDetails';
+import ClientDetails from './components/ClientDetails';
+import InvoiceDetails from './components/InvoiceDetails';
+import ItemSummary from './components/ItemSummary'
+import Notes from './components/Notes';
+import Footer from './components/Footer';
+import Header from './components/Header';
+
+
 
 function App() {
 
@@ -9,72 +18,19 @@ function App() {
   return (
     <div className="App">
       <main>
-        <header>
-          <div>
-            <h1>INVOICE</h1>
-          </div>
+        <Header handlePrint={handlePrint}/>
 
-          <div>
-            <ul className="publish-btns">
-              <li>
-                <button
-                  className='print-btn' 
-                  onClick={handlePrint}
-                >Print</button>
-              </li>
-              <li>
-                <button
-                  className='download-btn' 
-                >Download</button>
-              </li>
-              <li>
-                <button
-                  className='send-btn' 
-                >Send</button>
-              </li>
-            </ul>
-          </div>
-        </header>
+        <VendorDetails />
 
-        <section className='vendor-details'>
-          <h2>Tom O'Donovan</h2>
-          <p>Your Address</p>
-        </section>
+        <ClientDetails />
 
-        <section className='client-details'>
-          <h2>Client's Name</h2>
-          <p>Client's Address</p>  
-        </section>
+        <InvoiceDetails />
 
-        <section className='invoice-id'>
-          <ul>
-            <li><b>Invoice Number:</b></li>
-            <li><b>Invoice Date:</b></li>
-            <li><b>Due Date</b></li>
-          </ul>
-        </section>
+        <ItemSummary />
 
-        <section>
-          {/* Table */}
-          <p>Insert table here</p>
-        </section>
+        <Notes />
 
-        <section>
-          {/* Text area */}
-          <p>Notes to the client...</p>
-        </section>
-
-        <footer>
-          <ul>
-            <li><b>Your name:</b> Tom O'Donovan</li>
-            <li><b>Your email:</b> tom@amcco.com.au</li>
-            <li><b>Phone number:</b> 0413 543 309</li>
-            <li><b>Bank:</b> Commonwealth</li>
-            <li><b>Account holder:</b> Tom O'Donovan</li>
-            <li><b>Account number:</b> xxxx xxxx</li>
-            <li><b>Website:</b> tom.odonovan.com.au</li>
-          </ul>
-        </footer>
+        <Footer />
       </main>
       
     </div>
