@@ -1,4 +1,7 @@
 import './App.css'
+
+import { useState, UseEffect } from 'react'
+
 import VendorDetails from './components/VendorDetails';
 import ClientDetails from './components/ClientDetails';
 import InvoiceDetails from './components/InvoiceDetails';
@@ -10,6 +13,7 @@ import Header from './components/Header';
 
 
 function App() {
+  const [preview, setPreview] = useState(false)
 
   const handlePrint = () => {
     window.print()
@@ -18,19 +22,35 @@ function App() {
   return (
     <div className="App">
       <main>
-        <Header handlePrint={handlePrint}/>
+        {preview ? <div>
+          <Header handlePrint={handlePrint} />
 
-        <VendorDetails />
+          <VendorDetails />
 
-        <ClientDetails />
+          <ClientDetails />
 
-        <InvoiceDetails />
+          <InvoiceDetails />
 
-        <ItemSummary />
+          <ItemSummary />
 
-        <Notes />
+          <Notes />
 
-        <Footer />
+          <Footer />
+
+          <button
+            className='preview-btn'
+            onClick={() => setPreview(false)}
+          >Edit</button>
+        </div> : (
+          <div className='template-form'>
+            <input type='text' placeholder='Enter your name'></input>
+            <button 
+              className='preview-btn'
+              onClick={() => setPreview(true)}
+            >Preview Invoice</button>
+          </div>
+        )}
+        
       </main>
       
     </div>

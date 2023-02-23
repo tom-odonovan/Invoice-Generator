@@ -85,3 +85,27 @@ footer li {
     margin: 5px 5px;
     list-style: none;
 }
+
+.template-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.preview-btn {
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #3b82f6;
+    transition: all;
+    transition-duration: 300ms;
+}
+
+.preview-btn:hover {
+    background-color: transparent;
+    color: #3b82f6;
+    cursor: pointer;
+}
