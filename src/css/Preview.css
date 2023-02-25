@@ -1,9 +1,10 @@
-.billing-info {
+.flex-components {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
-.billing-info p {
+.flex-components p {
     margin: 5px;
 }

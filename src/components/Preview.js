@@ -7,8 +7,11 @@ import ClientDetails from './ClientDetails';
 import InvoiceDetails from './InvoiceDetails';
 import ItemSummary from './ItemSummary'
 import Notes from './Notes';
+import PaymentDetails from './PaymentDetails';
+import ContactInfo from './ContactInfo';
 import Footer from './Footer';
 import Header from './Header';
+
 
 export default function Preview({ hidePreview }) {
 
@@ -20,12 +23,16 @@ export default function Preview({ hidePreview }) {
     <div>
         <Header handlePrint={handlePrint} />
         <InvoiceDetails />
-        <div className='billing-info'>
-        <VendorDetails />
-        <ClientDetails />
+        <div className='flex-components'>
+          <VendorDetails />
+          <ClientDetails />
         </div>
         <ItemSummary />
-        <Notes />
+        <PaymentDetails />
+        <div className='flex-components'>
+          <ContactInfo />
+          <Notes />
+        </div>
         <Footer hidePreview={hidePreview}/>
     </div>
   )

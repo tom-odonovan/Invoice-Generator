@@ -5,6 +5,10 @@
     flex-direction: column;
 }
 
+.invoice-id ul {
+    padding: 0;
+}
+
 .invoice-id li {
     list-style: none;
 }

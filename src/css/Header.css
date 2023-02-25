@@ -10,11 +10,6 @@ header {
         max-width: 780px;
         margin: 20px auto;
     }
-
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
 }
 
 .publish-btns {
