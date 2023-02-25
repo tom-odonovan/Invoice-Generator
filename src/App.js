@@ -16,45 +16,19 @@ function App() {
   const [contactInfo, setContactInfo] = useState({})
   const [notes, setNotes] = useState({})
 
-  const setName = (e) => {
+  const handleVendorDetails = (e) => {
+    const { name, value } = e.target;
+    setVendorDetails((prevState) => ({
+      ...prevState, 
+      [name]: value 
+    }));
+  }
+
+  const handleClientDetails = (e) => {
+    const { name, value } = e.target;
     setClientDetails((prevState) => ({
       ...prevState, 
-      name: e.target.value 
-    }));
-  }
-
-  const setEmail = (e) => {
-    setClientDetails((prevState) => ({
-      ...prevState,
-      email: e.target.value
-    }));
-  }
-
-  const setAddress = (e) => {
-    setClientDetails((prevState) => ({
-      ...prevState,
-      address: e.target.value
-    }));
-  }
-
-  const setSuburb = (e) => {
-    setClientDetails((prevState) => ({
-      ...prevState,
-      suburb: e.target.value
-    }));
-  }
-
-  const setStateTerritory = (e) => {
-    setClientDetails((prevState) => ({
-      ...prevState,
-      stateTerritory: e.target.value
-    }));
-  }
-
-  const setPostcode = (e) => {
-    setClientDetails((prevState) => ({
-      ...prevState,
-      postcode: e.target.value
+      [name]: value 
     }));
   }
 
@@ -70,24 +44,18 @@ function App() {
     <div className="App">
       <main>
         {preview ? 
-          <Preview hidePreview={hidePreview} />
+          <Preview
+            vendorDetails={vendorDetails}
+            clientDetails={clientDetails} 
+            hidePreview={hidePreview} 
+          />
         : (
           <Form
-            name={clientDetails.name}
-            handleName={setName}
-            email={clientDetails.email}
-            handleEmail={setEmail}
-            address={clientDetails.address}
-            handleAddress={setAddress}
-            suburb={clientDetails.suburb}
-            handleSuburb={setSuburb}
-            stateTerritory={clientDetails.stateTerritory}
-            handleStateTerritory={setStateTerritory}
-            postcode={clientDetails.postcode}
-            handlePostcode={setPostcode}
-
+            vendorDetails={vendorDetails}
+            handleVendorDetails={handleVendorDetails}
+            clientDetails={clientDetails}
+            handleClientDetails={handleClientDetails}
             showPreview={showPreview}
-            details={clientDetails}
            />
         )}
         

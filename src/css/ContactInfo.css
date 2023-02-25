@@ -17,3 +17,7 @@
 .contact-info li {
     list-style: none;
 }
+
+.contact-info b {
+    padding-right: 5px;
+}
