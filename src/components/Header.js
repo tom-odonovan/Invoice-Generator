@@ -1,13 +1,10 @@
 import React from 'react'
+import '../css/Header.css'
 
-export default function Header({handlePrint}) {
+export default function Header({ handlePrint }) {
   return (
     <div>
         <header>
-          <div>
-            <h1>INVOICE</h1>
-          </div>
-
           <div>
             <ul className="publish-btns">
               <li>

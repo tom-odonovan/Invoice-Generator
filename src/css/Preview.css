@@ -1,0 +1,9 @@
+.billing-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.billing-info p {
+    margin: 5px;
+}

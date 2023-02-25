@@ -1,6 +1,7 @@
 import React from 'react'
+import '../css/Footer.css'
 
-export default function Footer() {
+export default function Footer({ hidePreview }) {
   return (
     <div>
         <footer>
@@ -13,6 +14,11 @@ export default function Footer() {
             <li><b>Account number:</b> xxxx xxxx</li>
             <li><b>Website:</b> tom.odonovan.com.au</li>
           </ul>
+
+          <button
+            className='preview-btn'
+            onClick={hidePreview}
+          >Edit</button>
         </footer>
     </div>
   )

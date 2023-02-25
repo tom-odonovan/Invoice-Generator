@@ -1,0 +1,10 @@
+.vendor-details {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.vendor-details h2 {
+    font-weight: initial;
+}
