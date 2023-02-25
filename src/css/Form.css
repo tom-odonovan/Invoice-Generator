@@ -4,7 +4,20 @@
     justify-content: center;
 }
 
+.template-form label {
+    margin-top: 10px;
+}
+
+.template-form input,
+.template-form select {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .preview-btn {
+    margin: 5px 0;
     background-color: #3b82f6;
     color: white;
     font-weight: bold;
