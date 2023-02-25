@@ -3,11 +3,13 @@ import '../css/Form.css'
 
 export default function Form(props) {
 
-  const { vendorDetails, handleVendorDetails,
+  const { invoiceDetails, handleInvoiceDetails,
+          vendorDetails, handleVendorDetails,
           clientDetails, handleClientDetails,
           showPreview } = props
 
   const handleLogDetails = () => {
+    console.log(invoiceDetails)
     console.log(vendorDetails);
     console.log(clientDetails)
   };
@@ -15,6 +17,38 @@ export default function Form(props) {
   return (
     <div>
         <form className='template-form'>
+
+          {/* INVOICE DETAILS */}
+
+          <label htmlFor='invoiceNo'>Invoice number</label>
+          <input 
+            type='text'
+            name='number'
+            required 
+            placeholder='Invoice number'
+            value={invoiceDetails.number || ''}
+            onChange={handleInvoiceDetails}
+          ></input>
+
+          <label htmlFor='date'>Invoice date</label>
+          <input 
+            type='date'
+            name='date'
+            required 
+            placeholder='Invoice date'
+            value={invoiceDetails.date || ''}
+            onChange={handleInvoiceDetails}
+          ></input>
+
+          <label htmlFor='invoiceNo'>Due date</label>
+          <input 
+            type='date'
+            name='dueDate'
+            required 
+            placeholder='Due date'
+            value={invoiceDetails.dueDate || ''}
+            onChange={handleInvoiceDetails}
+          ></input>
 
           {/* VENDOR DETAILS */}
 

@@ -15,7 +15,7 @@ import Header from './Header';
 
 export default function Preview(props) {
 
-    const { vendorDetails, clientDetails, hidePreview } = props
+    const { invoiceDetails, vendorDetails, clientDetails, hidePreview } = props
 
     const handlePrint = () => {
         window.print()
@@ -24,7 +24,11 @@ export default function Preview(props) {
   return (
     <div>
         <Header handlePrint={handlePrint} />
-        <InvoiceDetails />
+        <InvoiceDetails
+          number={invoiceDetails.number} 
+          date={invoiceDetails.date} 
+          dueDate={invoiceDetails.dueDate} 
+        />
         <div className='flex-components'>
           <VendorDetails
             name={vendorDetails.name}

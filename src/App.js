@@ -16,6 +16,14 @@ function App() {
   const [contactInfo, setContactInfo] = useState({})
   const [notes, setNotes] = useState({})
 
+  const handleInvoiceDetails = (e) => {
+    const { name, value } = e.target;
+    setInvoiceDetails((prevState) => ({
+      ...prevState, 
+      [name]: value 
+    }));
+  }
+
   const handleVendorDetails = (e) => {
     const { name, value } = e.target;
     setVendorDetails((prevState) => ({
@@ -45,12 +53,15 @@ function App() {
       <main>
         {preview ? 
           <Preview
+            invoiceDetails={invoiceDetails}
             vendorDetails={vendorDetails}
             clientDetails={clientDetails} 
             hidePreview={hidePreview} 
           />
         : (
           <Form
+            invoiceDetails={invoiceDetails}
+            handleInvoiceDetails={handleInvoiceDetails}
             vendorDetails={vendorDetails}
             handleVendorDetails={handleVendorDetails}
             clientDetails={clientDetails}

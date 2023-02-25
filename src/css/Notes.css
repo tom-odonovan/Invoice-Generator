@@ -1,10 +1,12 @@
 .notes {
     width: 300px;
+    text-align: justify;
     display: flex;
     align-items: start;
     justify-content: end;
     flex-direction: column;
     margin: 20px 0;
+    margin-right: 100px;
 }
 
 .notes h4 {

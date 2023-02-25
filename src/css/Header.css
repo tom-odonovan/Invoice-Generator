@@ -23,3 +23,33 @@ header {
 .publish-btns li {
     list-style: none;
 }
+
+.print-btn {
+    margin: 0 5px;
+    background-color: #f59e0b;
+    border: 2px solid #f59e0b;
+}
+
+.print-btn:hover {
+    color: #f59e0b;
+}
+
+.download-btn {
+    margin: 0 5px;
+    background-color: #3b82f6;
+    border: 2px solid #3b82f6;
+}
+
+.download-btn:hover {
+    color: #3b82f6;
+}
+
+.send-btn {
+    margin: 0 5px;
+    background-color: #10b981;
+    border: 2px solid #10b981;
+}
+
+.send-btn:hover {
+    color: #10b981;
+}
