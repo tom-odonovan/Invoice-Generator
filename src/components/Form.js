@@ -193,43 +193,51 @@ export default function Form(props) {
             onChange={handleClientDetails}
           ></input>
 
-          <label htmlFor='clientSuburb'>Suburb</label>
-          <input 
-            type='text'
-            name='suburb'
-            required 
-            placeholder='Suburb'
-            value={clientDetails.suburb || ''}
-            onChange={handleClientDetails}
-          ></input>
+          <div className='address-ln-2'>
+            <div>
+              <label htmlFor='clientSuburb'>Suburb</label>
+              <input
+                type='text'
+                name='suburb'
+                required
+                placeholder='Suburb'
+                value={clientDetails.suburb || ''}
+                onChange={handleClientDetails}
+              ></input>
+            </div>
 
-          <label htmlFor='clientState'>State/territory</label>
-          <select 
-            name='state'
-            required 
-            value={clientDetails.state || ''}
-            onChange={handleClientDetails}
-          >
-            <option value=''>Select State/territory</option>
-            <option value='ACT'>ACT</option>
-            <option value='NSW'>NSW</option>
-            <option value='NT'>NT</option>
-            <option value='QLD'>QLD</option>
-            <option value='SA'>SA</option>
-            <option value='TAS'>TAS</option>
-            <option value='VIC'>VIC</option>
-            <option value='WA'>WA</option>
-          </select>
+            <div>
+              <label htmlFor='clientState'>State/territory</label>
+              <select
+                name='state'
+                required
+                value={clientDetails.state || ''}
+                onChange={handleClientDetails}
+              >
+                <option value=''>Select State/territory</option>
+                <option value='ACT'>ACT</option>
+                <option value='NSW'>NSW</option>
+                <option value='NT'>NT</option>
+                <option value='QLD'>QLD</option>
+                <option value='SA'>SA</option>
+                <option value='TAS'>TAS</option>
+                <option value='VIC'>VIC</option>
+                <option value='WA'>WA</option>
+              </select>
+            </div>
 
-          <label htmlFor='clientPostcode'>Postcode</label>
-          <input 
-            type='text'
-            name='postcode'
-            required 
-            placeholder='Postcode'
-            value={clientDetails.postcode || ''}
-            onChange={handleClientDetails}
-          ></input>
+            <div>
+              <label htmlFor='clientPostcode'>Postcode</label>
+              <input
+                type='text'
+                name='postcode'
+                required
+                placeholder='Postcode'
+                value={clientDetails.postcode || ''}
+                onChange={handleClientDetails}
+              ></input>
+              </div>
+          </div>
 
           <button 
             className='preview-btn'

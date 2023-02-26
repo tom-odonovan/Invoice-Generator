@@ -5,10 +5,6 @@
     justify-content: center;
 }
 
-.template-form label {
-    margin-top: 10px;
-}
-
 .form-invoice-details,
 .address-ln-2 {
     display: flex;
@@ -36,6 +32,15 @@
     width: 210px;
 }
 
+@media only screen and (min-width: 900px) {
+    .form-invoice-details input,
+    .address-ln-2 input {
+        width: 200px;
+    }
+    .address-ln-2 select {
+        width: 220px;
+    }
+}
 @media only screen and (max-width: 750px) {
     .form-invoice-details input,
     .address-ln-2 input {
@@ -55,11 +60,20 @@
         width: 150px;
     }
 }
+@media only screen and (max-width: 550px) {
+    .form-invoice-details input,
+    .address-ln-2 input {
+        width: 75vw;
+    }
+
+    .address-ln-2 select {
+        width: 82vw;
+    }
+}
 
 .template-form input,
 .template-form select {
     padding: 15px;
-    margin: 10px 0;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.2);
 }

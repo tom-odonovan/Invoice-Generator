@@ -25,3 +25,21 @@ button:hover {
     background-color: transparent;
     cursor: pointer;
 }
+
+label {
+    font-weight: 500;
+    color: #4f4f4f;
+}
+
+input, select, textarea {
+    background-color: #f1f1f17a;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: #9b9b9b;
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+    color: #9b9b9b;
+}
