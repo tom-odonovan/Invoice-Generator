@@ -1,4 +1,5 @@
-.template-form {
+.template-form,
+.form-vendor-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,6 +7,53 @@
 
 .template-form label {
     margin-top: 10px;
+}
+
+.form-invoice-details,
+.address-ln-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-invoice-details div,
+.address-ln-2 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.form-invoice-details input,
+.address-ln-2 input {
+    width: 180px;
+    transition: all;
+    transition-duration: 500ms;
+}
+
+.address-ln-2 select {
+    width: 210px;
+}
+
+@media only screen and (max-width: 750px) {
+    .form-invoice-details input,
+    .address-ln-2 input {
+        width: 150px;
+    }
+    .address-ln-2 select {
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .form-invoice-details input,
+    .address-ln-2 input {
+        width: 120px;
+    }
+    .address-ln-2 select {
+        width: 150px;
+    }
 }
 
 .template-form input,
