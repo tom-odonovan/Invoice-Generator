@@ -9,7 +9,7 @@ import Preview from './components/Preview';
 function App() {
   const [preview, setPreview] = useState(false)
 
-  const [invoiceDetails, setInvoiceDetails] = useState({})
+  const [invoiceDetails, setInvoiceDetails] = useState({date: new Date().toLocaleDateString('en-CA')})
   const [vendorDetails, setVendorDetails] = useState({})
   const [clientDetails, setClientDetails] = useState({})
   const [paymentDetails, setPaymentDetails] = useState({})

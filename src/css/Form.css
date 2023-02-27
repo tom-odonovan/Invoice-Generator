@@ -1,74 +1,33 @@
 .template-form,
-.form-vendor-details {
+.form-vendor-details,
+.form-client-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .form-invoice-details,
-.address-ln-2 {
+.address-ln-2,
+.form-vendor-details div,
+.form-client-details div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 0 20px;
 }
 
 .form-invoice-details div,
 .address-ln-2 div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-grow: 1;
 }
 
-.form-invoice-details input,
-.address-ln-2 input {
-    width: 180px;
-    transition: all;
-    transition-duration: 500ms;
-}
-
-.address-ln-2 select {
-    width: 210px;
-}
-
-@media only screen and (min-width: 900px) {
-    .form-invoice-details input,
-    .address-ln-2 input {
-        width: 200px;
-    }
-    .address-ln-2 select {
-        width: 220px;
-    }
-}
-@media only screen and (max-width: 750px) {
-    .form-invoice-details input,
-    .address-ln-2 input {
-        width: 150px;
-    }
-    .address-ln-2 select {
-        width: 180px;
-    }
-}
-
-@media only screen and (max-width: 650px) {
-    .form-invoice-details input,
-    .address-ln-2 input {
-        width: 120px;
-    }
-    .address-ln-2 select {
-        width: 150px;
-    }
-}
-@media only screen and (max-width: 550px) {
-    .form-invoice-details input,
-    .address-ln-2 input {
-        width: 75vw;
-    }
-
-    .address-ln-2 select {
-        width: 82vw;
-    }
+.form-vendor-details div div, 
+.form-client-details div div {
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .template-form input,
@@ -76,6 +35,10 @@
     padding: 15px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.template-form h3 {
+    margin: 25px 0;
 }
 
 .preview-btn {

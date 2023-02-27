@@ -40,7 +40,7 @@ export default function Form(props) {
                 name='date'
                 required 
                 placeholder='Invoice date'
-              value={invoiceDetails.date || new Date().toLocaleDateString('en-CA')}
+                value={invoiceDetails.date}
                 onChange={handleInvoiceDetails}
               ></input>
             </div>
@@ -63,25 +63,33 @@ export default function Form(props) {
           <h3>Personal Details</h3>
 
           <div className='form-vendor-details'>
-            <label htmlFor='name'>Your Full Name</label>
-            <input 
-              type='text'
-              name='name'
-              required 
-              placeholder='Enter your name'
-              value={vendorDetails.name || ''}
-              onChange={handleVendorDetails}
-            ></input>
-
-            <label htmlFor='email'>Email address</label>
-            <input 
-              type='email'
-              name='email'
-              required
-              placeholder='Enter your email'
-              value={vendorDetails.email || ''}
-              onChange={handleVendorDetails}
-            ></input>
+            <div>
+              <div>
+                <label htmlFor='name'>Your Full Name</label>
+                <input
+                  type='text'
+                  name='name'
+                  required
+                  placeholder='Enter your name'
+                  value={vendorDetails.name || ''}
+                  onChange={handleVendorDetails}
+                ></input>
+              </div>
+              
+              <div>
+                <label htmlFor='email'>Email address</label>
+                <input
+                  type='email'
+                  name='email'
+                  required
+                  placeholder='Enter your email'
+                  value={vendorDetails.email || ''}
+                  onChange={handleVendorDetails}
+                ></input>
+              </div>
+              
+            </div>
+            
 
             <label htmlFor='address'>Address</label>
             <input 
@@ -163,81 +171,92 @@ export default function Form(props) {
 
           <h3>Client Details</h3>
 
-          <label htmlFor='clientName'>Client's Name</label>
-          <input 
-            type='text'
-            name='name'
-            required 
-            placeholder="Enter your client's name"
-            value={clientDetails.name || ''}
-            onChange={handleClientDetails}
-          ></input>
-
-          <label htmlFor='clientEmail'>Client's email address</label>
-          <input 
-            type='email'
-            name='email'
-            required
-            placeholder="Enter your client's email"
-            value={clientDetails.email || ''}
-            onChange={handleClientDetails}
-          ></input>
-
-          <label htmlFor='clientAddress'>Client's Address</label>
-          <input 
-            type='text'
-            name='address'
-            required 
-            placeholder="Enter your client's address"
-            value={clientDetails.address || ''}
-            onChange={handleClientDetails}
-          ></input>
-
-          <div className='address-ln-2'>
+          <div className='form-client-details'>
             <div>
-              <label htmlFor='clientSuburb'>Suburb</label>
-              <input
-                type='text'
-                name='suburb'
-                required
-                placeholder='Suburb'
-                value={clientDetails.suburb || ''}
-                onChange={handleClientDetails}
-              ></input>
-            </div>
-
-            <div>
-              <label htmlFor='clientState'>State/territory</label>
-              <select
-                name='state'
-                required
-                value={clientDetails.state || ''}
-                onChange={handleClientDetails}
-              >
-                <option value=''>Select State/territory</option>
-                <option value='ACT'>ACT</option>
-                <option value='NSW'>NSW</option>
-                <option value='NT'>NT</option>
-                <option value='QLD'>QLD</option>
-                <option value='SA'>SA</option>
-                <option value='TAS'>TAS</option>
-                <option value='VIC'>VIC</option>
-                <option value='WA'>WA</option>
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor='clientPostcode'>Postcode</label>
-              <input
-                type='text'
-                name='postcode'
-                required
-                placeholder='Postcode'
-                value={clientDetails.postcode || ''}
-                onChange={handleClientDetails}
-              ></input>
+              <div>
+                <label htmlFor='clientName'>Client's Name</label>
+                <input
+                  type='text'
+                  name='name'
+                  required
+                  placeholder="Enter your client's name"
+                  value={clientDetails.name || ''}
+                  onChange={handleClientDetails}
+                ></input>
               </div>
+
+              <div>
+                <label htmlFor='clientEmail'>Client's email address</label>
+                <input
+                  type='email'
+                  name='email'
+                  required
+                  placeholder="Enter your client's email"
+                  value={clientDetails.email || ''}
+                  onChange={handleClientDetails}
+                ></input>
+              </div>
+            </div>
+            
+            
+
+            <label htmlFor='clientAddress'>Client's Address</label>
+            <input
+              type='text'
+              name='address'
+              required
+              placeholder="Enter your client's address"
+              value={clientDetails.address || ''}
+              onChange={handleClientDetails}
+            ></input>
+
+            <div className='address-ln-2'>
+              <div>
+                <label htmlFor='clientSuburb'>Suburb</label>
+                <input
+                  type='text'
+                  name='suburb'
+                  required
+                  placeholder='Suburb'
+                  value={clientDetails.suburb || ''}
+                  onChange={handleClientDetails}
+                ></input>
+              </div>
+
+              <div>
+                <label htmlFor='clientState'>State/territory</label>
+                <select
+                  name='state'
+                  required
+                  value={clientDetails.state || ''}
+                  onChange={handleClientDetails}
+                >
+                  <option value=''>Select State/territory</option>
+                  <option value='ACT'>ACT</option>
+                  <option value='NSW'>NSW</option>
+                  <option value='NT'>NT</option>
+                  <option value='QLD'>QLD</option>
+                  <option value='SA'>SA</option>
+                  <option value='TAS'>TAS</option>
+                  <option value='VIC'>VIC</option>
+                  <option value='WA'>WA</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor='clientPostcode'>Postcode</label>
+                <input
+                  type='text'
+                  name='postcode'
+                  required
+                  placeholder='Postcode'
+                  value={clientDetails.postcode || ''}
+                  onChange={handleClientDetails}
+                ></input>
+              </div>
+            </div>
           </div>
+          
 
           <button 
             className='preview-btn'
