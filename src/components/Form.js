@@ -1,11 +1,13 @@
 import React from 'react'
 import '../css/Form.css'
+import AddInvoiceItems from './AddInvoiceItems';
 
 export default function Form(props) {
 
   const { invoiceDetails, handleInvoiceDetails,
           vendorDetails, handleVendorDetails,
           clientDetails, handleClientDetails,
+          itemSummary, handleItemSummary,
           showPreview } = props
 
   const handleLogDetails = () => {
@@ -256,6 +258,12 @@ export default function Form(props) {
               </div>
             </div>
           </div>
+
+          <h3>Item Summary</h3>
+          <AddInvoiceItems
+            itemSummary={itemSummary}
+            handleItemSummary={handleItemSummary}
+          />
           
 
           <button 
