@@ -1,6 +1,6 @@
 import './css/App.css'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import Form from './components/Form';
 import Preview from './components/Preview';
@@ -15,6 +15,7 @@ function App() {
   const [paymentDetails, setPaymentDetails] = useState({})
   const [contactInfo, setContactInfo] = useState({})
   const [notes, setNotes] = useState({})
+  const [itemSummary, setItemSummary] = useState({})
 
   const handleInvoiceDetails = (e) => {
     const { name, value } = e.target;
@@ -40,6 +41,21 @@ function App() {
     }));
   }
 
+  const handleItemSummary = (e) => {
+    const { name, value } = e.target;
+    setItemSummary((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
+  }
+
+  useEffect(() => {
+    setItemSummary((prevState) => ({
+      ...prevState,
+      total: itemSummary.quantity * itemSummary.price || 0
+    }));
+  }, [itemSummary])
+
   const showPreview = () => {
     setPreview(true)
   }
@@ -55,7 +71,8 @@ function App() {
           <Preview
             invoiceDetails={invoiceDetails}
             vendorDetails={vendorDetails}
-            clientDetails={clientDetails} 
+            clientDetails={clientDetails}
+            itemSummary={itemSummary} 
             hidePreview={hidePreview} 
           />
         : (
@@ -66,6 +83,8 @@ function App() {
             handleVendorDetails={handleVendorDetails}
             clientDetails={clientDetails}
             handleClientDetails={handleClientDetails}
+            itemSummary={itemSummary}
+            handleItemSummary={handleItemSummary}
             showPreview={showPreview}
            />
         )}
