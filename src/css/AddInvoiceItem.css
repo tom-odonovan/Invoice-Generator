@@ -1,0 +1,25 @@
+.new-item {
+    display: flex;
+    gap: 0 15px;
+}
+
+@media only screen and (max-width: 645px){
+    .new-item {
+        flex-wrap: wrap;
+    }
+}
+
+.new-item div:first-child {
+    width: 100%;
+    flex-grow: 2;
+}
+
+.new-item div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.new-item div:not(:first-of-type) {
+    width: 100px;
+}

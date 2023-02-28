@@ -1,0 +1,13 @@
+.item-summary {
+    width: 100%;
+    margin: 50px 0;
+    border-spacing: 0;
+    
+}
+.item-summary thead tr {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+.item-summary td {
+    padding: 0.5rem;
+}
