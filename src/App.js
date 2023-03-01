@@ -15,7 +15,8 @@ function App() {
   const [paymentDetails, setPaymentDetails] = useState({})
   const [contactInfo, setContactInfo] = useState({})
   const [notes, setNotes] = useState({})
-  const [itemSummary, setItemSummary] = useState({})
+  const [item, setItem] = useState({})
+  const [itemList, setItemList] = useState([])
 
   const handleInvoiceDetails = (e) => {
     const { name, value } = e.target;
@@ -41,20 +42,27 @@ function App() {
     }));
   }
 
-  const handleItemSummary = (e) => {
-    const { name, value } = e.target;
-    setItemSummary((prevState) => ({
-      ...prevState,
-      [name]: value
-    }));
+  const handleItem = (e) => {
+    if (e.target) {
+      const { name, value } = e.target;
+      setItem((prevState) => ({
+        ...prevState, [name]: value }))
+    } else {
+      setItem(e)
+    }
   }
 
   useEffect(() => {
-    setItemSummary((prevState) => ({
+    setItem((prevState) => ({
       ...prevState,
-      total: itemSummary.quantity * itemSummary.price || 0
+      total: item.quantity * item.price || 0
     }));
-  }, [itemSummary])
+  }, [item.price])
+
+  const handleItemList = (newItem) => {
+    setItemList([ ...itemList, newItem])
+  }
+
 
   const showPreview = () => {
     setPreview(true)
@@ -72,7 +80,8 @@ function App() {
             invoiceDetails={invoiceDetails}
             vendorDetails={vendorDetails}
             clientDetails={clientDetails}
-            itemSummary={itemSummary} 
+            item={item}
+            itemList={itemList} 
             hidePreview={hidePreview} 
           />
         : (
@@ -83,8 +92,10 @@ function App() {
             handleVendorDetails={handleVendorDetails}
             clientDetails={clientDetails}
             handleClientDetails={handleClientDetails}
-            itemSummary={itemSummary}
-            handleItemSummary={handleItemSummary}
+            item={item}
+            handleItem={handleItem}
+            itemList={itemList}
+            handleItemList={handleItemList}
             showPreview={showPreview}
            />
         )}
