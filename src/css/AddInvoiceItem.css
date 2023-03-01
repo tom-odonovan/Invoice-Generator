@@ -1,25 +1,37 @@
-.new-item {
+.item-details {
     display: flex;
     gap: 0 15px;
 }
 
 @media only screen and (max-width: 645px){
-    .new-item {
+    .item-details {
         flex-wrap: wrap;
     }
 }
 
-.new-item div:first-child {
+.item-details div:first-child {
     width: 100%;
     flex-grow: 2;
 }
 
-.new-item div {
+.item-details div {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.new-item div:not(:first-of-type) {
+.item-details div:not(:first-of-type) {
     width: 100px;
+}
+
+.add-item-btn {
+    margin-top: 5px;
+    padding: 0.8rem 2rem;
+    margin-bottom: 50px;
+    background-color: #10b981;
+    border: 2px solid #10b981;
+}
+
+.add-item-btn:hover {
+    color: #10b981;
 }

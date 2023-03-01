@@ -26,6 +26,11 @@ button:hover {
     cursor: pointer;
 }
 
+button:active {
+    transform: scale(0.95);
+    opacity: 0.6;
+}
+
 label {
     font-weight: 500;
     color: #4f4f4f;

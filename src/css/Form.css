@@ -43,6 +43,10 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.template-form .item-summary {
+    margin-top: 0;
+}
+
 .preview-btn {
     margin: 5px 0;
     background-color: #3b82f6;

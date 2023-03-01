@@ -10,4 +10,9 @@
 }
 .item-summary td {
     padding: 0.5rem;
+
+}
+
+.item-summary td:first-child {
+    width: 50%;
 }
