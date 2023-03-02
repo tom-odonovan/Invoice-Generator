@@ -1,0 +1,9 @@
+td .item-details {
+    width: 775px;
+    table-layout: auto;
+    padding-left: 0;
+}
+
+.edit-item .item-details div:first-child {
+    width: 430px;
+}
