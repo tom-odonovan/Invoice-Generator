@@ -19,6 +19,10 @@
     padding: 0 0.5rem;
 }
 
+.item-summary :nth-child(2) td {
+    padding-top: 1.5rem;
+}
+
 .item-summary .col-1 {
     width: 100%;
     padding-right: 0;

@@ -47,13 +47,6 @@
     margin-top: 0;
 }
 
-/* .delete-btn,
-.edit-btn {
-    width: 50px;
-    padding: 0.5rem 0;
-    margin: 0 5px;
-} */
-
 .item-summary .btn-container {
     display: flex;
     justify-content: flex-end;
