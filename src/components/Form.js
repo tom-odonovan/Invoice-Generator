@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/Form.css'
 import AddInvoiceItems from './AddInvoiceItems';
+import EditInvoiceItems from './EditInvoiceItems';
 import { RiDeleteBin5Line } from 'react-icons/ri'
 import { FaRegEdit } from 'react-icons/fa'
 
@@ -12,6 +13,7 @@ export default function Form(props) {
           item, handleItem,
           itemList, handleItemList,
           handleDelete, handleEdit,
+          isEditingItem, confirmEdit,
           showPreview } = props
 
   const handleLogDetails = () => {
@@ -278,25 +280,47 @@ export default function Form(props) {
               </tr>
             </thead>
 
-            {itemList.map(({ description, quantity, price, total }, index) => (
-              <tbody key={index}>
-                <tr>
-                  <td>{description}</td>
-                  <td>{quantity}</td>
-                  <td>{price}</td>
-                  <td>{total}</td>
+            
+            {itemList.map((item, index) => (
+
+              isEditingItem === item  ? (
+
+                <tbody key={index}>
+                  <tr>
+                    <td>
+                      <EditInvoiceItems
+                        index={index}
+                        item={item}
+                        handleItem={handleItem}
+                        itemList={itemList}
+                        confirmEdit={confirmEdit}
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+
+              ) : (
+
+                <tbody key={index}>
+                  <tr>
+                    <td>{item.description}</td>
+                    <td>{item.quantity}</td>
+                    <td>{item.price}</td>
+                    <td>{item.total}</td>
 
 
-                  <td className='btn-container'>
-                    <button className='edit-btn' onClick={() => handleEdit(index)}>
-                      <FaRegEdit size={20} />
-                    </button>
-                    <button className='delete-btn' onClick={() => handleDelete(index)}>
-                      <RiDeleteBin5Line size={20} />
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
+                    <td className='btn-container'>
+                      <button className='edit-btn' onClick={() => handleEdit(index)}>
+                        <FaRegEdit size={20} />
+                      </button>
+                      <button className='delete-btn' onClick={() => handleDelete(index)}>
+                        <RiDeleteBin5Line size={20} />
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+
+              )
             ))}
           </table>
         </div>

@@ -17,6 +17,7 @@ function App() {
   const [notes, setNotes] = useState({})
   const [item, setItem] = useState({})
   const [itemList, setItemList] = useState([])
+  const [isEditingItem, setIsEditingItem] = useState(null)
 
   const handleInvoiceDetails = (e) => {
     const { name, value } = e.target;
@@ -67,8 +68,15 @@ function App() {
     setItemList(itemList.filter((item, index) => index !== id))
   }
 
-  const handleEdit = () => {
+  const handleEdit = (id) => {
+    const itemToEdit = itemList.find((item, index) => index === id) 
+    setIsEditingItem(itemToEdit)
+  }
+
+  const confirmEdit = (id) => {
+    const editedItem = itemList.find((item, index) => index === id)
     
+    setIsEditingItem(null)
   }
 
 
@@ -83,7 +91,7 @@ function App() {
   return (
     <div className="App">
       <main>
-        {preview ? 
+        {preview ? (
           <Preview
             invoiceDetails={invoiceDetails}
             vendorDetails={vendorDetails}
@@ -92,7 +100,7 @@ function App() {
             itemList={itemList} 
             hidePreview={hidePreview} 
           />
-        : (
+        ) : (
           <Form
             invoiceDetails={invoiceDetails}
             handleInvoiceDetails={handleInvoiceDetails}
@@ -106,6 +114,8 @@ function App() {
             handleItemList={handleItemList}
             handleDelete={handleDelete}
             handleEdit={handleEdit}
+            isEditingItem={isEditingItem}
+            confirmEdit={confirmEdit}
             showPreview={showPreview}
            />
         )}
