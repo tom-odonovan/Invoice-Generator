@@ -63,6 +63,14 @@ function App() {
     setItemList([ ...itemList, newItem])
   }
 
+  const handleDelete = (id) => {
+    setItemList(itemList.filter((item, index) => index !== id))
+  }
+
+  const handleEdit = () => {
+
+  }
+
 
   const showPreview = () => {
     setPreview(true)
@@ -96,6 +104,8 @@ function App() {
             handleItem={handleItem}
             itemList={itemList}
             handleItemList={handleItemList}
+            handleDelete={handleDelete}
+            handleEdit={handleEdit}
             showPreview={showPreview}
            />
         )}

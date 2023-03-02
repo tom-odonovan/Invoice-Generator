@@ -1,6 +1,8 @@
 import React from 'react'
 import '../css/Form.css'
 import AddInvoiceItems from './AddInvoiceItems';
+import { RiDeleteBin5Line } from 'react-icons/ri'
+import { FaRegEdit } from 'react-icons/fa'
 
 export default function Form(props) {
 
@@ -9,6 +11,7 @@ export default function Form(props) {
           clientDetails, handleClientDetails,
           item, handleItem,
           itemList, handleItemList,
+          handleDelete, handleEdit,
           showPreview } = props
 
   const handleLogDetails = () => {
@@ -272,19 +275,30 @@ export default function Form(props) {
               <td>Quantity</td>
               <td>Price</td>
               <td>Total</td>
+              <td></td>
             </tr>
           </thead>
 
-          <tbody>
-            {itemList.map(({description, quantity, price, total}, index) => (
-              <tr key={index}>
+          {itemList.map(({description, quantity, price, total}, index) => (
+            <tbody key={index}>
+              <tr>
                 <td>{description}</td>
                 <td>{quantity}</td>
                 <td>{price}</td>
                 <td>{total}</td>
+                
+                <div>
+                  <button className='edit-btn' onClick={handleEdit}>
+                    <FaRegEdit size={20} />
+                  </button>
+                  <button className='delete-btn' onClick={() => handleDelete(index)}>
+                    <RiDeleteBin5Line size={20} />
+                  </button>
+                </div>
+              
               </tr>
-            ))}
-          </tbody>
+            </tbody>
+          ))}
         </table>
         
       ) : null }
