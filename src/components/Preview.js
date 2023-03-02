@@ -41,12 +41,7 @@ export default function Preview(props) {
             address={clientDetails.address} 
           />
         </div>
-        <ItemSummary
-          description={item.description}
-          quantity={item.quantity}
-          price={item.price}
-          total={item.total} 
-        />
+        <ItemSummary itemList={itemList} />
         <PaymentDetails />
         <div className='flex-components'>
           <ContactInfo
