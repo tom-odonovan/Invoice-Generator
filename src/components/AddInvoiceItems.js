@@ -1,10 +1,14 @@
 import React from 'react'
 import ItemSummary from './ItemSummary'
 import '../css/AddInvoiceItem.css'
+import { GoPlus } from 'react-icons/go'
+import { useRef } from 'react'
 
 
 export default function AddInvoiceItems(props) {
     const { item, handleItem, itemList, handleItemList } = props
+
+    const inputRef = useRef(null)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,6 +24,9 @@ export default function AddInvoiceItems(props) {
 
         // Reset state of item
         handleItem({ description: '', quantity: '', price: '', total: '' });
+
+        // Set focus back to first input field
+        inputRef.current.focus()
     }
 
   return (
@@ -35,6 +42,7 @@ export default function AddInvoiceItems(props) {
                         placeholder='Item description'
                         value={item.description || ''}
                         onChange={handleItem}
+                        ref={inputRef}
                     ></input>
                 </div>
                 <div>
@@ -72,9 +80,14 @@ export default function AddInvoiceItems(props) {
 
                     ></input>
                 </div>
+                <div>
+                    <button type='submit' className='add-item-btn'>
+                        <GoPlus size={15} />Add
+                    </button>
+                </div>
             </div>
 
-            <button type='submit' className='add-item-btn'>+ Add Item</button>
+            
 
         </form>
     </div>

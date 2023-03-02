@@ -264,45 +264,46 @@ export default function Form(props) {
         </div>
       </div>
 
-      <h3>Item Summary</h3>
-
       {itemList.length > 0 ? (
-
-        <table className='item-summary'>
-          <thead>
-            <tr>
-              <td>Description</td>
-              <td>Quantity</td>
-              <td>Price</td>
-              <td>Total</td>
-              <td></td>
-            </tr>
-          </thead>
-
-          {itemList.map(({description, quantity, price, total}, index) => (
-            <tbody key={index}>
+        <div>
+          <h3>Item Summary</h3>
+          <table className='item-summary'>
+            <thead>
               <tr>
-                <td>{description}</td>
-                <td>{quantity}</td>
-                <td>{price}</td>
-                <td>{total}</td>
-                
-                <div>
-                  <button className='edit-btn' onClick={handleEdit}>
-                    <FaRegEdit size={20} />
-                  </button>
-                  <button className='delete-btn' onClick={() => handleDelete(index)}>
-                    <RiDeleteBin5Line size={20} />
-                  </button>
-                </div>
-              
+                <td className='col-1'>Description</td>
+                <td className='col-2'>Quantity</td>
+                <td className='col-3'>Price</td>
+                <td className='col-4'>Total</td>
+                <td className='col-5'></td>
               </tr>
-            </tbody>
-          ))}
-        </table>
+            </thead>
+
+            {itemList.map(({ description, quantity, price, total }, index) => (
+              <tbody key={index}>
+                <tr>
+                  <td>{description}</td>
+                  <td>{quantity}</td>
+                  <td>{price}</td>
+                  <td>{total}</td>
+
+
+                  <td className='btn-container'>
+                    <button className='edit-btn' onClick={() => handleEdit(index)}>
+                      <FaRegEdit size={20} />
+                    </button>
+                    <button className='delete-btn' onClick={() => handleDelete(index)}>
+                      <RiDeleteBin5Line size={20} />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            ))}
+          </table>
+        </div>
         
       ) : null }
       
+      <h3>Add Invoice Items</h3>
       <AddInvoiceItems
         item={item}
         handleItem={handleItem}

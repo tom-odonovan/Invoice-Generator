@@ -1,6 +1,8 @@
 .item-details {
     display: flex;
     gap: 0 15px;
+    /* width: 90%; */
+    justify-content: center;
 }
 
 @media only screen and (max-width: 645px){
@@ -18,6 +20,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    justify-content: center;
 }
 
 .item-details div:not(:first-of-type) {
@@ -25,9 +28,11 @@
 }
 
 .add-item-btn {
-    margin-top: 5px;
-    padding: 0.8rem 2rem;
-    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0.8rem;
     background-color: #10b981;
     border: 2px solid #10b981;
 }

@@ -54,10 +54,12 @@
     margin: 0 5px;
 } */
 
-.item-summary div {
+.item-summary .btn-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 5px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .delete-btn,
