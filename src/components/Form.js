@@ -13,7 +13,8 @@ export default function Form(props) {
           item, handleItem,
           itemList, handleItemList,
           handleDelete, handleEdit,
-          isEditingItem, confirmEdit,
+          isEditingItem, editedItem, 
+          handleEditedItem, confirmEdit,
           showPreview } = props
 
   const handleLogDetails = () => {
@@ -285,14 +286,14 @@ export default function Form(props) {
 
               isEditingItem === item  ? (
 
-                <tbody key={index}>
+                <tbody className='edit-items' key={index}>
                   <tr>
                     <td>
                       <EditInvoiceItems
                         index={index}
                         item={item}
-                        handleItem={handleItem}
-                        itemList={itemList}
+                        handleEditedItem={handleEditedItem}
+                        editedItem={editedItem}
                         confirmEdit={confirmEdit}
                       />
                     </td>
@@ -301,7 +302,7 @@ export default function Form(props) {
 
               ) : (
 
-                <tbody key={index}>
+                <tbody className='items' key={index}>
                   <tr>
                     <td>{item.description}</td>
                     <td>{item.quantity}</td>

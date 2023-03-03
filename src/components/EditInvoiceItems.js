@@ -4,22 +4,13 @@ import { useRef } from 'react'
 import { BsCheck2 } from 'react-icons/bs'
 
 export default function EditInvoiceItems(props) {
-    const { index, item, handleItem, itemList, confirmEdit } = props
+    const { index, item, editedItem, handleEditedItem, confirmEdit } = props
 
     const inputRef = useRef(null)
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        const editedItemIndex = index
-
-        confirmEdit(item)
-
-        // Reset state of item
-        // handleItem({ description: '', quantity: '', price: '', total: '' });
-
-        // Set focus back to first input field
-        // inputRef.current.focus()
+        confirmEdit(editedItem || item, index)
     }
 
     return (
@@ -33,8 +24,8 @@ export default function EditInvoiceItems(props) {
                             type='text'
                             name='description'
                             placeholder='Item description'
-                            value={item.description || ''}
-                            onChange={handleItem}
+                            value={editedItem.description || item.description || ''}
+                            onChange={handleEditedItem}
                             ref={inputRef}
                         ></input>
                     </div>
@@ -46,8 +37,8 @@ export default function EditInvoiceItems(props) {
                             min='0'
                             name='quantity'
                             placeholder='0'
-                            value={item.quantity || ''}
-                            onChange={handleItem}
+                            value={editedItem.quantity || item.quantity || ''}
+                            onChange={handleEditedItem}
                         ></input>
                     </div>
                     <div>
@@ -58,8 +49,8 @@ export default function EditInvoiceItems(props) {
                             min='0'
                             name='price'
                             placeholder='$ 0.00'
-                            value={item.price || ''}
-                            onChange={handleItem}
+                            value={editedItem.price || item.price || ''}
+                            onChange={handleEditedItem}
                         ></input>
                     </div>
                     <div>
@@ -68,8 +59,8 @@ export default function EditInvoiceItems(props) {
                             type='number'
                             name='total'
                             placeholder='$ 0.00'
-                            value={item.quantity * item.price || ''}
-                            onChange={handleItem}
+                            value={editedItem.quantity * editedItem.price || item.quantity * item.price || ''}
+                            onChange={handleEditedItem}
 
                         ></input>
                     </div>
