@@ -18,6 +18,7 @@ function App() {
   const [item, setItem] = useState({})
   const [itemList, setItemList] = useState([])
   const [isEditingItem, setIsEditingItem] = useState(null)
+  const [editedItem, setEditedItem] = useState({})
 
   const handleInvoiceDetails = (e) => {
     const { name, value } = e.target;
@@ -58,7 +59,7 @@ function App() {
       ...prevState,
       total: item.quantity * item.price || 0
     }));
-  }, [item.price])
+  }, [item.quantity, item.price])
 
   const handleItemList = (newItem) => {
     setItemList([ ...itemList, newItem])
@@ -71,12 +72,35 @@ function App() {
   const handleEdit = (id) => {
     const itemToEdit = itemList.find((item, index) => index === id) 
     setIsEditingItem(itemToEdit)
+    setEditedItem(itemToEdit)
   }
 
-  const confirmEdit = (id) => {
-    const editedItem = itemList.find((item, index) => index === id)
-    
-    setIsEditingItem(null)
+  const handleEditedItem = (e) => {
+    if (e.target) {
+      const { name, value } = e.target;
+      setEditedItem((prevState) => ({
+        ...prevState, [name]: value
+      }))
+    } else {
+      setEditedItem(e)
+    }
+  }
+
+  useEffect(() => {
+    console.log(editedItem)
+    setEditedItem((prevState) => ({
+      ...prevState,
+      total: editedItem.quantity * editedItem.price || 0
+    }));
+  }, [editedItem.quantity, editedItem.price])
+
+  const confirmEdit = (updatedItem, index) => {
+    const updatedList = [...itemList]
+    updatedList[index] = updatedItem;
+    setItemList(updatedList);
+
+    setIsEditingItem(null);
+    setEditedItem({});
   }
 
 
@@ -115,6 +139,8 @@ function App() {
             handleDelete={handleDelete}
             handleEdit={handleEdit}
             isEditingItem={isEditingItem}
+            editedItem={editedItem}
+            handleEditedItem={handleEditedItem}
             confirmEdit={confirmEdit}
             showPreview={showPreview}
            />
