@@ -47,6 +47,10 @@
     margin-top: 0;
 }
 
+.edit-items td {
+    padding-left: 5px !important;
+}
+
 .item-summary .btn-container {
     display: flex;
     justify-content: flex-end;

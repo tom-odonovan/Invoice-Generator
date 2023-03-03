@@ -1,6 +1,7 @@
 .item-summary {
     width: 100%;
     margin: 0;
+    margin-bottom: 30px;
     border-spacing: 0;
     table-layout: fixed;
     
@@ -17,6 +18,14 @@
 
 .item-summary tbody td {
     padding: 0 0.5rem;
+}
+
+.item-summary .edit-items input {
+    margin-bottom: 0;
+}
+
+.item-summary .items td {
+    border-bottom: 1px solid rgba(0 0 0 / 0.1);
 }
 
 .item-summary :nth-child(2) td {

@@ -7,3 +7,13 @@ td .item-details {
 .edit-item .item-details div:first-child {
     width: 430px;
 }
+
+.edit-item .item-details {
+    align-items: flex-end;
+    padding: 1rem 0;
+}
+
+.edit-item .add-item-btn {
+    margin: 0;
+    height: 47px;
+}
