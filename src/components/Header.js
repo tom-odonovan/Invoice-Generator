@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/Header.css'
+import { BiPrinter } from 'react-icons/bi'
 
 export default function Header({ handlePrint }) {
   return (
@@ -8,12 +9,11 @@ export default function Header({ handlePrint }) {
           <div>
             <ul className="publish-btns">
               <li>
-                <button
-                  className='print-btn' 
-                  onClick={handlePrint}
-                >Print</button>
+                <button className='print-btn' onClick={handlePrint}>
+                  <BiPrinter size={20} />Print
+                </button>
               </li>
-              <li>
+              {/* <li>
                 <button
                   className='download-btn' 
                 >Download</button>
@@ -22,7 +22,7 @@ export default function Header({ handlePrint }) {
                 <button
                   className='send-btn' 
                 >Send</button>
-              </li>
+              </li> */}
             </ul>
           </div>
         </header>

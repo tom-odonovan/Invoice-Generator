@@ -275,8 +275,8 @@ export default function Form(props) {
               <tr>
                 <td className='col-1'>Description</td>
                 <td className='col-2'>Quantity</td>
-                <td className='col-3'>Price</td>
-                <td className='col-4'>Total</td>
+                <td className='col-3'>Price ($)</td>
+                <td className='col-4'>Total ($)</td>
                 <td className='col-5'></td>
               </tr>
             </thead>

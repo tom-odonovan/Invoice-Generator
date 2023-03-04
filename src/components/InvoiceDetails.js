@@ -1,9 +1,9 @@
 import React from 'react'
 import '../css/InvoiceDetails.css'
 
-export default function InvoiceDetails(props) {
+export default function InvoiceDetails({invoiceDetails}) {
 
-  const { number, date, dueDate } = props
+  const { number, date, dueDate } = invoiceDetails
 
   return (
     <div>

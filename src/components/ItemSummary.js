@@ -10,8 +10,8 @@ export default function ItemSummary({ itemList }) {
           <tr>
             <td>Description</td>
             <td>Quantity</td>
-            <td>Price</td>
-            <td>Total</td>
+            <td>Price ($)</td>
+            <td>Total ($)</td>
           </tr>
         </thead>
 

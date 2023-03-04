@@ -1,9 +1,9 @@
 import React from 'react'
 import '../css/VendorDetails.css'
 
-export default function VendorDetails(props) {
+export default function VendorDetails({vendorDetails}) {
 
-    const { name, email, address } = props
+    const { name, email, address, suburb, state, postcode } = vendorDetails
 
   return (
     <div>
@@ -11,7 +11,7 @@ export default function VendorDetails(props) {
           <h2>{ name }</h2>
           <p>{ email }</p>
           <p>{ address }</p>
-          <p>Manly, NSW 2095</p>
+          <p>{suburb}, {state} {postcode}</p>
         </section>
     </div>
   )

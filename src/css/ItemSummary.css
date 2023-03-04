@@ -4,6 +4,8 @@
     margin-bottom: 30px;
     border-spacing: 0;
     table-layout: fixed;
+    transition: all;
+    transition-duration: 300ms;
     
 }
 

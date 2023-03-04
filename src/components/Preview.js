@@ -23,23 +23,11 @@ export default function Preview(props) {
 
   return (
     <div>
-        {/* <Header handlePrint={handlePrint} /> */}
-        <InvoiceDetails
-          number={invoiceDetails.number} 
-          date={invoiceDetails.date} 
-          dueDate={invoiceDetails.dueDate} 
-        />
+        <Header handlePrint={handlePrint} />
+        <InvoiceDetails invoiceDetails={invoiceDetails} />
         <div className='flex-components'>
-          <VendorDetails
-            name={vendorDetails.name}
-            email={vendorDetails.email}
-            address={vendorDetails.address} 
-          />
-          <ClientDetails
-            name={clientDetails.name}
-            email={clientDetails.email}
-            address={clientDetails.address} 
-          />
+          <VendorDetails vendorDetails={vendorDetails} />
+          <ClientDetails clientDetails={clientDetails} />
         </div>
         <ItemSummary itemList={itemList} />
         <PaymentDetails />
