@@ -25,8 +25,18 @@ Invoice Generator is a web application built with React that allows users to gen
 
 ## Demo <a name="demo"></a>
 
-</br>
-(Coming Soon!)
+
+Demo the latest build <button style="color: white;
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    border: 2px solid #3b82f6;
+    background-color: #3b82f6;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+    transition: all;
+    transition-duration: 300ms;
+    user-select: none;">[here](https://tom-odonovan.github.io/Invoice-Generator/)</button>
 </br>
 </br>
 
