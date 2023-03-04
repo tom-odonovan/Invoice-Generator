@@ -105,7 +105,8 @@ function App() {
   }
 
   const handleTotals = () => {
-
+    const invoiceTotal = itemList.reduce((result, item) => result + item.total, 0);
+    setTotals({total: invoiceTotal})
   }
 
   const showPreview = () => {

@@ -42,6 +42,6 @@ export default function Preview(props) {
           <Notes vendorName={vendorDetails.name}/>
         </div>
         <Footer hidePreview={hidePreview}/>
-    </div>
+    </div> 
   )
 }

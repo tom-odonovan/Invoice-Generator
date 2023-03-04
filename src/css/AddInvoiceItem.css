@@ -40,3 +40,8 @@
 .add-item-btn:hover {
     color: #10b981;
 }
+
+.add-item .add-item-btn {
+    padding: 0.92rem 0.8rem;
+    margin-bottom: 2px;
+}

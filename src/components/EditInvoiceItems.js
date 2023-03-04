@@ -73,7 +73,7 @@ export default function EditInvoiceItems(props) {
 
 
 
-            </form>
+            </form> 
         </div>
     )
 }

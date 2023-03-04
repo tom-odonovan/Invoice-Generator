@@ -21,6 +21,7 @@ export default function AddInvoiceItems(props) {
         }
 
         handleItemList(newItem)
+
         handleTotals()
 
         // Reset state of item

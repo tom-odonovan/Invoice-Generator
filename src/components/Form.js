@@ -16,7 +16,8 @@ export default function Form(props) {
           handleDelete, handleEdit,
           isEditingItem, editedItem, 
           handleEditedItem, confirmEdit,
-          handleTotals, showPreview } = props
+          totals, handleTotals, 
+          showPreview } = props
 
   return (
 
@@ -333,7 +334,7 @@ export default function Form(props) {
         handleTotals={handleTotals}
       />
 
-      {/* <InvoiceTotals /> */}
+      {/* <InvoiceTotals totals={totals}/> */}
       
 
       <button 
