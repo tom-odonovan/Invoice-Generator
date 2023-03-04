@@ -46,7 +46,6 @@ Invoice Generator is a web application built with React that allows users to gen
 - Add input for payment details
 - Calculate invoice totals
 - Edit Vendor Notes
-
 - Save and retrieve invoices from database
 - Save Client/Vendor information to database
 - Upload logo image to invoices 
