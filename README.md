@@ -7,22 +7,22 @@
 
 ## Table of Contents
 
-- [Introduction](#Introduction)
-- [Features](#Features)
-- [Demo](#Demo)
-- [Installation and Setup](#Installation-and-Setup)
-- [Usage](#Usage)
-- [Contributing](#Contributing)
-- [Testing](#Testing)
-- [Licence](#Licence)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Demo](#demo)
+- [Installation and Setup](#installation-and-setup)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Testing](#testing)
+- [Licence](#licence)
 </br>
 
-## Introduction <a name="Introduction"></a>
+## Introduction <a name="introduction"></a>
 
 Invoice Generator is a web application built with React that allows users to generate and manage invoices. The app provides a simple and intuitive interface for users to input invoice details and generate a professional-looking invoice that can be printed or saved as a PDF.
 </br>
 
-## Features <a name="Features"></a>
+## Features <a name="features"></a>
 
 - Input and save vendor and client details
 - Input and save invoice details (invoice number, date, due date)
@@ -33,14 +33,14 @@ Invoice Generator is a web application built with React that allows users to gen
 - Download invoices as PDF files
 </br>
 
-## Demo <a name="Demo"></a>
+## Demo <a name="demo"></a>
 
 </br>
 (Coming Soon!)
 </br>
 </br>
 
-## Installation and Setup <a name="Installation-and-Setup"></a>
+## Installation and Setup <a name="installation-and-setup"></a>
 
 1. Clone this repository:
     ```bash
@@ -61,7 +61,7 @@ Invoice Generator is a web application built with React that allows users to gen
 4. Open http://localhost:3000 in a web browser to view the app.
 </br>
 
-## Usage <a name="Usage"></a>
+## Usage <a name="usage"></a>
 
 1. Enter the invoice details in the top section of the form.
 2. Fill out the vendor and client details in the form.
@@ -72,7 +72,7 @@ Invoice Generator is a web application built with React that allows users to gen
 7. Print the invoice using the Print button or Download by selecting 'save as a PDF' via the print preview.
 </br>
 
-## Contributing <a name="Contributing"></a>
+## Contributing <a name="contributing"></a>
 
 
 Contributions to the Invoice Generator app are welcome and encouraged! To contribute, follow these steps:
@@ -93,7 +93,7 @@ Contributions to the Invoice Generator app are welcome and encouraged! To contri
 5. Create a new Pull Request
 </br>
 
-## Testing <a name="Testing"></a>
+## Testing <a name="testing"></a>
 
 Testing is an important part of this project, and helps ensure that everything is working as expected. To run tests, you'll need to have Node.js and npm installed on your machine. You can install them by following the instructions here.
 
@@ -106,7 +106,7 @@ npm run test
 Successful tests will show a list of passing tests and exit with a status of 0. If any tests fail, you'll see an error message explaining what went wrong. If you need help troubleshooting failed tests, please reach out or check the issue tracker for any known issues.
 </br>
 
-## Licence <a name="Licence"></a>
+## Licence <a name="licence"></a>
 
 This project is licenced under [...project licence here](#) 
 </br>
