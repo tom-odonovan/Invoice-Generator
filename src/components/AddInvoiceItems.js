@@ -6,7 +6,7 @@ import { useRef } from 'react'
 
 
 export default function AddInvoiceItems(props) {
-    const { item, handleItem, itemList, handleItemList } = props
+    const { item, handleItem, itemList, handleItemList, handleTotals } = props
 
     const inputRef = useRef(null)
 
@@ -21,6 +21,7 @@ export default function AddInvoiceItems(props) {
         }
 
         handleItemList(newItem)
+        handleTotals()
 
         // Reset state of item
         handleItem({ description: '', quantity: '', price: '', total: '' });

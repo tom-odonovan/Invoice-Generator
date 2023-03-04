@@ -17,8 +17,10 @@
 }
 
 .invoice-id li {
+    display: flex;
     list-style: none;
     padding: 5px 0;
+    justify-content: space-between;
 }
 
 .invoice-id li:nth-child(2) {
@@ -26,5 +28,5 @@
 }
 
 .invoice-id b {
-    padding-right: 5px;
+    padding-right: 40px;
 }

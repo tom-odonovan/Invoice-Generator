@@ -8,6 +8,19 @@
     transition-duration: 300ms;
     
 }
+.preview {
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0 0 0 / 0.1)
+}
+
+.preview .description {
+    width: 450px;
+}
+.preview tbody td {
+    padding: 10px 0;
+}
 
 .item-summary td {
     padding: 0.5rem;

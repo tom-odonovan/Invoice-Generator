@@ -6,6 +6,7 @@ import VendorDetails from './VendorDetails';
 import ClientDetails from './ClientDetails';
 import InvoiceDetails from './InvoiceDetails';
 import ItemSummary from './ItemSummary'
+import InvoiceTotals from './InvoiceTotals';
 import Notes from './Notes';
 import PaymentDetails from './PaymentDetails';
 import ContactInfo from './ContactInfo';
@@ -30,6 +31,7 @@ export default function Preview(props) {
           <ClientDetails clientDetails={clientDetails} />
         </div>
         <ItemSummary itemList={itemList} />
+        <InvoiceTotals />
         <PaymentDetails />
         <div className='flex-components'>
           <ContactInfo
@@ -37,7 +39,7 @@ export default function Preview(props) {
             email={vendorDetails.email}
             website={vendorDetails.website} 
           />
-          <Notes />
+          <Notes vendorName={vendorDetails.name}/>
         </div>
         <Footer hidePreview={hidePreview}/>
     </div>

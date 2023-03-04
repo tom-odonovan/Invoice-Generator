@@ -6,6 +6,12 @@
     justify-content: center;
 }
 
+.template-form h2 {
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .form-invoice-details,
 .address-ln-2,
 .form-vendor-details div,

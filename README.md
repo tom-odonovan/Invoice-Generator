@@ -8,8 +8,9 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Features](#features)
 - [Demo](#demo)
+- [Features](#features)
+- [Improvements](#improvements)
 - [Installation and Setup](#installation-and-setup)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -20,6 +21,13 @@
 ## Introduction <a name="introduction"></a>
 
 Invoice Generator is a web application built with React that allows users to generate and manage invoices. The app provides a simple and intuitive interface for users to input invoice details and generate a professional-looking invoice that can be printed or saved as a PDF.
+</br>
+
+## Demo <a name="demo"></a>
+
+</br>
+(Coming Soon!)
+</br>
 </br>
 
 ## Features <a name="features"></a>
@@ -33,11 +41,18 @@ Invoice Generator is a web application built with React that allows users to gen
 - Download invoices as PDF files
 </br>
 
-## Demo <a name="demo"></a>
+## Planned Improvements <a name="improvements"></a>
 
-</br>
-(Coming Soon!)
-</br>
+- Add input for payment details
+- Calculate invoice totals
+- Edit Vendor Notes
+
+- Save and retrieve invoices from database
+- Save Client/Vendor information to database
+- Upload logo image to invoices 
+- Implement download button to download PDF file
+- Implement Signup/Login functionality to accomodate multiple users 
+- Create user sales reports to visualise business success
 </br>
 
 ## Installation and Setup <a name="installation-and-setup"></a>

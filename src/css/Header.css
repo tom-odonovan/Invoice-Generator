@@ -1,8 +1,11 @@
 header {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+header h1 {
+    opacity: 0.4;
 }
 
 @media only screen and (min-width: 900px) {

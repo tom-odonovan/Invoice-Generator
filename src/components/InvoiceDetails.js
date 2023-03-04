@@ -9,11 +9,10 @@ export default function InvoiceDetails({invoiceDetails}) {
     <div>
         <section className='invoice-details'>
           <div className='invoice-id'>
-            <h1>INVOICE</h1>
             <ul>
               <li><b>Invoice Number:</b>{ number }</li>
-              <li><b>Invoice Date:</b>{ date }</li>
-              <li><b>Due Date</b>{ dueDate }</li>
+              <li><b>Issue Date:</b>{ date }</li>
+              <li><b>Due Date:</b>{ dueDate }</li>
             </ul>
           </div>
           

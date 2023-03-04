@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/Form.css'
 import AddInvoiceItems from './AddInvoiceItems';
 import EditInvoiceItems from './EditInvoiceItems';
+import InvoiceTotals from './InvoiceTotals';
 import { RiDeleteBin5Line } from 'react-icons/ri'
 import { FaRegEdit } from 'react-icons/fa'
 
@@ -15,11 +16,13 @@ export default function Form(props) {
           handleDelete, handleEdit,
           isEditingItem, editedItem, 
           handleEditedItem, confirmEdit,
-          showPreview } = props
+          handleTotals, showPreview } = props
 
   return (
 
     <div className='template-form'>
+
+      <h2>New Invoice</h2>
 
       {/* INVOICE DETAILS */}
 
@@ -327,7 +330,10 @@ export default function Form(props) {
         handleItem={handleItem}
         itemList={itemList}
         handleItemList={handleItemList}
+        handleTotals={handleTotals}
       />
+
+      {/* <InvoiceTotals /> */}
       
 
       <button 

@@ -5,10 +5,10 @@ export default function ItemSummary({ itemList }) {
 
   return (
     <div>
-      <table className='item-summary'>
+      <table className='item-summary preview'>
         <thead>
           <tr>
-            <td>Description</td>
+            <td className='description'>Description</td>
             <td>Quantity</td>
             <td>Price ($)</td>
             <td>Total ($)</td>

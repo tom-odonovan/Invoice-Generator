@@ -6,6 +6,7 @@ export default function Header({ handlePrint }) {
   return (
     <div>
         <header>
+          <h1>INVOICE</h1>
           <div>
             <ul className="publish-btns">
               <li>

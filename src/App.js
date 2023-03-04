@@ -19,6 +19,7 @@ function App() {
   const [itemList, setItemList] = useState([])
   const [isEditingItem, setIsEditingItem] = useState(null)
   const [editedItem, setEditedItem] = useState({})
+  const [totals, setTotals] = useState({})
 
   const handleInvoiceDetails = (e) => {
     const { name, value } = e.target;
@@ -103,6 +104,9 @@ function App() {
     setEditedItem({});
   }
 
+  const handleTotals = () => {
+
+  }
 
   const showPreview = () => {
     setPreview(true)
@@ -142,6 +146,7 @@ function App() {
             editedItem={editedItem}
             handleEditedItem={handleEditedItem}
             confirmEdit={confirmEdit}
+            handleTotals={handleTotals}
             showPreview={showPreview}
            />
         )}
