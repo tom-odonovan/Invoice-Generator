@@ -25,13 +25,18 @@ header {
 }
 
 .print-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0.5rem 1.2rem;
     margin: 0 5px;
-    background-color: #f59e0b;
-    border: 2px solid #f59e0b;
+    background-color: #10b981;
+    border: 2px solid #10b981;
 }
 
 .print-btn:hover {
-    color: #f59e0b;
+    color: #10b981;
 }
 
 .download-btn {
