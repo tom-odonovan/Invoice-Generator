@@ -1,7 +1,7 @@
 # Invoice Generator
 
-A single-page-app created with React.js where users can generate, store and send invoices
 </br>
+A single-page-app created with React.js where users can generate, store and send invoices
 </br>
 
 ## Table of Contents
@@ -15,12 +15,10 @@ A single-page-app created with React.js where users can generate, store and send
 - [Testing](#Testing)
 - [Licence](#Licence)
 </br>
-</br>
 
 ## Introduction <a name="Introduction"></a>
 
 Invoice Generator is a web application built with React that allows users to generate and manage invoices. The app provides a simple and intuitive interface for users to input invoice details and generate a professional-looking invoice that can be printed or saved as a PDF.
-</br>
 </br>
 
 ## Features <a name="Features"></a>
@@ -38,7 +36,6 @@ Invoice Generator is a web application built with React that allows users to gen
 ## Demo <a name="Demo"></a>
 
 (Coming Soon!)
-</br>
 </br>
 
 ## Installation and Setup <a name="Installation-and-Setup"></a>
@@ -61,7 +58,6 @@ Invoice Generator is a web application built with React that allows users to gen
 
 4. Open http://localhost:3000 in a web browser to view the app.
 </br>
-</br>
 
 ## Usage <a name="Usage"></a>
 
@@ -72,7 +68,6 @@ Invoice Generator is a web application built with React that allows users to gen
 5. Add any additional notes or payment details in the bottom section of the form.
 6. Preview the invoice by clicking the "Preview" button.
 7. Print the invoice using the Print button or Download by selecting 'save as a PDF' via the print preview.
-</br>
 </br>
 
 ## Contributing <a name="Contributing"></a>
@@ -95,7 +90,6 @@ Contributions to the Invoice Generator app are welcome and encouraged! To contri
     ```
 5. Create a new Pull Request
 </br>
-</br>
 
 ## Testing <a name="Testing"></a>
 
@@ -108,7 +102,6 @@ npm run test
 ```
 
 Successful tests will show a list of passing tests and exit with a status of 0. If any tests fail, you'll see an error message explaining what went wrong. If you need help troubleshooting failed tests, please reach out or check the issue tracker for any known issues.
-</br>
 </br>
 
 ## Licence <a name="Licence"></a>
