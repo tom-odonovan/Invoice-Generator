@@ -1,7 +1,8 @@
 # Invoice Generator
 
-</br>
-A single-page-app created with React.js where users can generate, store and send invoices
+<div style="height: 400px; overflow: scroll;">
+  <img src="./public/form_screenshot2.png" alt="Form demo screenshot" style="min-height: 1050px; min-width: 100%">
+</div>
 </br>
 
 ## Table of Contents
@@ -31,11 +32,12 @@ Invoice Generator is a web application built with React that allows users to gen
 - Preview and print invoices
 - Download invoices as PDF files
 </br>
-</br>
 
 ## Demo <a name="Demo"></a>
 
+</br>
 (Coming Soon!)
+</br>
 </br>
 
 ## Installation and Setup <a name="Installation-and-Setup"></a>

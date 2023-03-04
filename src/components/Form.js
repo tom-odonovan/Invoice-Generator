@@ -17,13 +17,6 @@ export default function Form(props) {
           handleEditedItem, confirmEdit,
           showPreview } = props
 
-  const handleLogDetails = () => {
-    console.log(invoiceDetails)
-    console.log(vendorDetails);
-    console.log(clientDetails)
-    console.log(itemList)
-  };
-
   return (
 
     <div className='template-form'>
@@ -342,11 +335,7 @@ export default function Form(props) {
         onClick={showPreview}
       >Preview Invoice</button>
 
-      <button 
-        className='preview-btn'
-        type='button'
-        onClick={handleLogDetails}
-      >Log details</button>
+      
     </div>
 
   )

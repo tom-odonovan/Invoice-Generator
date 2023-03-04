@@ -89,3 +89,7 @@
 .edit-btn:hover {
     color: #3b82f6;
 }
+
+.template-form .preview-btn {
+    margin-top: 20px;
+}
