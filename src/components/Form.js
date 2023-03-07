@@ -321,8 +321,10 @@ export default function Form(props) {
               )
             ))}
           </table>
+
+          {/* <InvoiceTotals totals={totals} /> */}
         </div>
-        
+
       ) : null }
       
       <h3>Add Invoice Items</h3>
@@ -334,7 +336,7 @@ export default function Form(props) {
         handleTotals={handleTotals}
       />
 
-      {/* <InvoiceTotals totals={totals}/> */}
+      
       
 
       <button 

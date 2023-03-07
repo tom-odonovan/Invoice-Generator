@@ -8,19 +8,6 @@
     transition-duration: 300ms;
     
 }
-.preview {
-    margin-top: 50px;
-    margin-bottom: 0;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(0 0 0 / 0.1)
-}
-
-.preview .description {
-    width: 55%;
-}
-.preview tbody td {
-    padding: 10px 0;
-}
 
 .item-summary td {
     padding: 0.5rem;
@@ -29,10 +16,6 @@
 .item-summary thead tr {
     background-color: #f5f5f5;
     font-weight: 600;
-}
-
-.item-summary tbody td {
-    padding: 0 0.5rem;
 }
 
 .item-summary .edit-items input {
@@ -75,5 +58,51 @@
     .col-3,
     .col-4 {
         width: 60px;
+    }
+}
+
+
+
+.preview-item-summary {
+    margin-top: 50px;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0 0 0 / 0.1)
+}
+
+.flex-table {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.preview-item-summary .header {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.flex-table .first {
+    width: 55%;
+}
+
+.flex-table div:not(.first) {
+    width: 70px;
+}
+
+.preview-item-summary .flex-row {
+    padding: 0.5rem;
+}
+
+.preview-item-summary .row:nth-child(2) {
+    padding-top: 1.2rem;
+}
+
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    .flex-table .first {
+            width: 40%;
+    }
+    .flex-table div:not(.first) {
+            width: 70px;
     }
 }
