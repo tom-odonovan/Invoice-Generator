@@ -105,9 +105,15 @@ function App() {
   }
 
   const handleTotals = () => {
+    // console.log(itemList)
+    // const invoiceTotal = itemList.reduce((result, item) => result + item.total, 0);
+    // setTotals({ total: invoiceTotal })
+  } 
+
+  useEffect(() => {
     const invoiceTotal = itemList.reduce((result, item) => result + item.total, 0);
-    setTotals({total: invoiceTotal})
-  }
+    setTotals({ subtotal: invoiceTotal, total: invoiceTotal })
+  }, [itemList])  
 
   const showPreview = () => {
     setPreview(true)
@@ -122,11 +128,13 @@ function App() {
       <main>
         {preview ? (
           <Preview
+            preview={preview}
             invoiceDetails={invoiceDetails}
             vendorDetails={vendorDetails}
             clientDetails={clientDetails}
             item={item}
-            itemList={itemList} 
+            itemList={itemList}
+            totals={totals} 
             hidePreview={hidePreview} 
           />
         ) : (
@@ -147,6 +155,7 @@ function App() {
             editedItem={editedItem}
             handleEditedItem={handleEditedItem}
             confirmEdit={confirmEdit}
+            totals={totals}
             handleTotals={handleTotals}
             showPreview={showPreview}
            />

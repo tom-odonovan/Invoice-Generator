@@ -10,6 +10,7 @@
     align-items: start;
     justify-content: end;
     flex-direction: column;
+    
 }
 
 .invoice-totals ul {
@@ -20,8 +21,22 @@
 .invoice-totals li {
     display: flex;
     list-style: none;
-    padding: 10px 0;
+    padding: 10px;
     justify-content: space-between;
+    padding-right: 37px;
+}
+
+.invoice-totals div {
+    width: 100%;
+}
+
+.invoice-totals p {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+    padding: 10px;
+    padding-right: 37px;
+    margin: 0;
 }
 
 .invoice-totals li:nth-child(2) {
