@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/InvoiceTotals.css'
+import '../../css/InvoiceTotals.css'
 
 export default function InvoiceTotals({totals}) {
 

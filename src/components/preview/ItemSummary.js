@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/ItemSummary.css'
+import '../../css/ItemSummary.css'
 
 export default function ItemSummary(props) {
 

@@ -1,21 +1,40 @@
 import React from 'react'
-import '../css/EditInvoiceItem.css'
+import ItemSummary from '../preview/ItemSummary'
+import '../../css/AddInvoiceItem.css'
+import { GoPlus } from 'react-icons/go'
 import { useRef } from 'react'
-import { BsCheck2 } from 'react-icons/bs'
 
-export default function EditInvoiceItems(props) {
-    const { index, item, editedItem, handleEditedItem, confirmEdit } = props
+
+export default function AddInvoiceItems(props) {
+    const { item, handleItem, itemList, handleItemList, handleTotals } = props
 
     const inputRef = useRef(null)
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        confirmEdit(editedItem || item, index)
+
+        const newItem = {
+            description: item.description,
+            quantity: item.quantity,
+            price: item.price,
+            total: item.total
+        }
+
+        handleItemList(newItem)
+
+        // handleTotals()
+
+
+        // Reset state of item
+        handleItem({ description: '', quantity: '', price: '', total: '' });
+
+        // Set focus back to first input field
+        inputRef.current.focus()
     }
 
     return (
-        <div>
-            <form className='edit-item' onSubmit={handleSubmit}>
+        <div className='add-item'>
+            <form onSubmit={handleSubmit}>
                 <div className='item-details'>
                     <div>
                         <label htmlFor='description'>Item description</label>
@@ -24,8 +43,8 @@ export default function EditInvoiceItems(props) {
                             type='text'
                             name='description'
                             placeholder='Item description'
-                            value={editedItem.description || item.description || ''}
-                            onChange={handleEditedItem}
+                            value={item.description || ''}
+                            onChange={handleItem}
                             ref={inputRef}
                         ></input>
                     </div>
@@ -37,8 +56,8 @@ export default function EditInvoiceItems(props) {
                             min='0'
                             name='quantity'
                             placeholder='0'
-                            value={editedItem.quantity || item.quantity || ''}
-                            onChange={handleEditedItem}
+                            value={item.quantity || ''}
+                            onChange={handleItem}
                         ></input>
                     </div>
                     <div>
@@ -49,8 +68,8 @@ export default function EditInvoiceItems(props) {
                             min='0'
                             name='price'
                             placeholder='$ 0.00'
-                            value={editedItem.price || item.price || ''}
-                            onChange={handleEditedItem}
+                            value={item.price || ''}
+                            onChange={handleItem}
                         ></input>
                     </div>
                     <div>
@@ -59,21 +78,21 @@ export default function EditInvoiceItems(props) {
                             type='number'
                             name='total'
                             placeholder='$ 0.00'
-                            value={editedItem.quantity * editedItem.price || item.quantity * item.price || ''}
-                            onChange={handleEditedItem}
+                            value={item.quantity * item.price || ''}
+                            onChange={handleItem}
 
                         ></input>
                     </div>
                     <div>
                         <button type='submit' className='add-item-btn'>
-                            <BsCheck2 size={15} />
+                            <GoPlus size={15} />Add
                         </button>
                     </div>
                 </div>
 
 
 
-            </form> 
+            </form>
         </div>
     )
 }

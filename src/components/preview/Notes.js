@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/Notes.css'
+import '../../css/Notes.css'
 
 export default function Notes({vendorName}) {
   return (

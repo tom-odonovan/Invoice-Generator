@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/ContactInfo.css'
+import '../../css/ContactInfo.css'
 
 export default function ContactInfo(props) {
 

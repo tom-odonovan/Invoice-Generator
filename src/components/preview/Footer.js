@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/Footer.css'
+import '../../css/Footer.css'
 import { FaRegEdit } from 'react-icons/fa'
 
 export default function Footer({ hidePreview }) {

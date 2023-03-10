@@ -1,24 +1,24 @@
 import React from 'react'
-import '../css/Form.css'
-import ItemSummary from './ItemSummary'
+import '../../css/Form.css'
+import ItemSummary from '../preview/ItemSummary'
 import AddInvoiceItems from './AddInvoiceItems';
 import EditInvoiceItems from './EditInvoiceItems';
-import InvoiceTotals from './InvoiceTotals';
+import InvoiceTotals from '../preview/InvoiceTotals';
 import { RiDeleteBin5Line } from 'react-icons/ri'
 import { FaRegEdit } from 'react-icons/fa'
 
 export default function Form(props) {
 
   const { invoiceDetails, handleInvoiceDetails,
-          vendorDetails, handleVendorDetails,
-          clientDetails, handleClientDetails,
-          item, handleItem,
-          itemList, handleItemList,
-          handleDelete, handleEdit,
-          isEditingItem, editedItem, 
-          handleEditedItem, confirmEdit,
-          totals, handleTotals, 
-          preview, showPreview } = props
+    vendorDetails, handleVendorDetails,
+    clientDetails, handleClientDetails,
+    item, handleItem,
+    itemList, handleItemList,
+    handleDelete, handleEdit,
+    isEditingItem, editedItem,
+    handleEditedItem, confirmEdit,
+    totals, handleTotals,
+    preview, showPreview } = props
 
   return (
 
@@ -31,10 +31,10 @@ export default function Form(props) {
       <div className='form-invoice-details'>
         <div>
           <label htmlFor='invoiceNo'>Invoice number</label>
-          <input 
+          <input
             type='text'
             name='number'
-            required 
+            required
             placeholder='Invoice number'
             value={invoiceDetails.number || ''}
             onChange={handleInvoiceDetails}
@@ -43,10 +43,10 @@ export default function Form(props) {
 
         <div>
           <label htmlFor='date'>Invoice date</label>
-          <input 
+          <input
             type='date'
             name='date'
-            required 
+            required
             placeholder='Invoice date'
             value={invoiceDetails.date}
             onChange={handleInvoiceDetails}
@@ -55,10 +55,10 @@ export default function Form(props) {
 
         <div>
           <label htmlFor='invoiceNo'>Due date</label>
-          <input 
+          <input
             type='date'
             name='dueDate'
-            required 
+            required
             placeholder='Due date'
             value={invoiceDetails.dueDate || ''}
             onChange={handleInvoiceDetails}
@@ -83,7 +83,7 @@ export default function Form(props) {
               onChange={handleVendorDetails}
             ></input>
           </div>
-          
+
           <div>
             <label htmlFor='email'>Email address</label>
             <input
@@ -95,15 +95,15 @@ export default function Form(props) {
               onChange={handleVendorDetails}
             ></input>
           </div>
-          
+
         </div>
-        
+
 
         <label htmlFor='address'>Address</label>
-        <input 
+        <input
           type='text'
           name='address'
-          required 
+          required
           placeholder='Enter your address'
           value={vendorDetails.address || ''}
           onChange={handleVendorDetails}
@@ -112,10 +112,10 @@ export default function Form(props) {
         <div className='address-ln-2'>
           <div>
             <label htmlFor='suburb'>Suburb</label>
-            <input 
+            <input
               type='text'
               name='suburb'
-              required 
+              required
               placeholder='Suburb'
               value={vendorDetails.suburb || ''}
               onChange={handleVendorDetails}
@@ -124,9 +124,9 @@ export default function Form(props) {
 
           <div>
             <label htmlFor='state'>State/territory</label>
-            <select 
+            <select
               name='state'
-              required 
+              required
               value={vendorDetails.state || ''}
               onChange={handleVendorDetails}
             >
@@ -144,10 +144,10 @@ export default function Form(props) {
 
           <div>
             <label htmlFor='postcode'>Postcode</label>
-            <input 
+            <input
               type='text'
               name='postcode'
-              required 
+              required
               placeholder='Postcode'
               value={vendorDetails.postcode || ''}
               onChange={handleVendorDetails}
@@ -156,18 +156,18 @@ export default function Form(props) {
         </div>
 
         <label htmlFor='phone'>Phone number</label>
-        <input 
+        <input
           type='text'
-          name='phone' 
+          name='phone'
           placeholder='Enter your phone number'
           value={vendorDetails.phone || ''}
           onChange={handleVendorDetails}
         ></input>
 
         <label htmlFor='website'>Website (optional)</label>
-        <input 
+        <input
           type='text'
-          name='website' 
+          name='website'
           placeholder='Your website url'
           value={vendorDetails.website || ''}
           onChange={handleVendorDetails}
@@ -205,8 +205,8 @@ export default function Form(props) {
             ></input>
           </div>
         </div>
-        
-        
+
+
 
         <label htmlFor='clientAddress'>Client's Address</label>
         <input
@@ -274,7 +274,7 @@ export default function Form(props) {
           {itemList.map((item, index) => (
 
             isEditingItem === item ? (
-                
+
               <div className='edit-items'>
                 <EditInvoiceItems
                   index={index}
@@ -285,7 +285,7 @@ export default function Form(props) {
                 />
               </div>
 
-            ) : ( 
+            ) : (
 
               <div className='form-item-summary body'>
                 <div className='flex-table row' key={index}>
@@ -311,8 +311,8 @@ export default function Form(props) {
           {/* <InvoiceTotals totals={totals} /> */}
         </div>
 
-      ) : null }
-      
+      ) : null}
+
       <h3>Add Invoice Items</h3>
       <AddInvoiceItems
         item={item}
@@ -322,15 +322,15 @@ export default function Form(props) {
         handleTotals={handleTotals}
       />
 
-      
-      
 
-      <button 
+
+
+      <button
         className='preview-btn'
         onClick={showPreview}
       >Preview Invoice</button>
 
-      
+
     </div>
 
   )

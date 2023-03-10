@@ -2,14 +2,14 @@ import './css/App.css'
 
 import { useState, useEffect } from 'react'
 
-import Form from './components/Form';
-import Preview from './components/Preview';
+import Form from './components/form/Form';
+import Preview from './components/preview/Preview';
 
 
 function App() {
   const [preview, setPreview] = useState(false)
 
-  const [invoiceDetails, setInvoiceDetails] = useState({date: new Date().toLocaleDateString('en-CA')})
+  const [invoiceDetails, setInvoiceDetails] = useState({ date: new Date().toLocaleDateString('en-CA') })
   const [vendorDetails, setVendorDetails] = useState({})
   const [clientDetails, setClientDetails] = useState({})
   const [paymentDetails, setPaymentDetails] = useState({})
@@ -24,24 +24,24 @@ function App() {
   const handleInvoiceDetails = (e) => {
     const { name, value } = e.target;
     setInvoiceDetails((prevState) => ({
-      ...prevState, 
-      [name]: value 
+      ...prevState,
+      [name]: value
     }));
   }
 
   const handleVendorDetails = (e) => {
     const { name, value } = e.target;
     setVendorDetails((prevState) => ({
-      ...prevState, 
-      [name]: value 
+      ...prevState,
+      [name]: value
     }));
   }
 
   const handleClientDetails = (e) => {
     const { name, value } = e.target;
     setClientDetails((prevState) => ({
-      ...prevState, 
-      [name]: value 
+      ...prevState,
+      [name]: value
     }));
   }
 
@@ -49,7 +49,8 @@ function App() {
     if (e.target) {
       const { name, value } = e.target;
       setItem((prevState) => ({
-        ...prevState, [name]: value }))
+        ...prevState, [name]: value
+      }))
     } else {
       setItem(e)
     }
@@ -63,7 +64,7 @@ function App() {
   }, [item.quantity, item.price])
 
   const handleItemList = (newItem) => {
-    setItemList([ ...itemList, newItem])
+    setItemList([...itemList, newItem])
   }
 
   const handleDelete = (id) => {
@@ -71,7 +72,7 @@ function App() {
   }
 
   const handleEdit = (id) => {
-    const itemToEdit = itemList.find((item, index) => index === id) 
+    const itemToEdit = itemList.find((item, index) => index === id)
     setIsEditingItem(itemToEdit)
     setEditedItem(itemToEdit)
   }
@@ -108,12 +109,12 @@ function App() {
     // console.log(itemList)
     // const invoiceTotal = itemList.reduce((result, item) => result + item.total, 0);
     // setTotals({ total: invoiceTotal })
-  } 
+  }
 
   useEffect(() => {
     const invoiceTotal = itemList.reduce((result, item) => result + item.total, 0);
     setTotals({ subtotal: invoiceTotal, total: invoiceTotal })
-  }, [itemList])  
+  }, [itemList])
 
   const showPreview = () => {
     setPreview(true)
@@ -134,8 +135,8 @@ function App() {
             clientDetails={clientDetails}
             item={item}
             itemList={itemList}
-            totals={totals} 
-            hidePreview={hidePreview} 
+            totals={totals}
+            hidePreview={hidePreview}
           />
         ) : (
           <Form
@@ -158,11 +159,11 @@ function App() {
             totals={totals}
             handleTotals={handleTotals}
             showPreview={showPreview}
-           />
+          />
         )}
-        
+
       </main>
-      
+
     </div>
   );
 }

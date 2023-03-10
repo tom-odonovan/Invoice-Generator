@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/InvoiceDetails.css'
+import '../../css/InvoiceDetails.css'
 
 export default function InvoiceDetails({invoiceDetails}) {
 

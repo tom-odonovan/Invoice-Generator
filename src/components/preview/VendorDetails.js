@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/VendorDetails.css'
+import '../../css/VendorDetails.css'
 
 export default function VendorDetails({vendorDetails}) {
 

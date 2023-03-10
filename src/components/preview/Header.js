@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/Header.css'
+import '../../css/Header.css'
 import { BiPrinter } from 'react-icons/bi'
 
 export default function Header({ handlePrint }) {
