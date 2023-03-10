@@ -8,7 +8,9 @@ export default function ItemSummary(props) {
   return (
     <div>
       
-      <div className='preview-item-summary'>
+      { preview ? (
+
+        <div className='preview-item-summary'>
           <div className='flex-table header'>
             <div className='flex-row first'>Description</div>
             <div className='flex-row'>Quantity</div>
@@ -24,11 +26,23 @@ export default function ItemSummary(props) {
               <div className='flex-row'>{price}</div>
               <div className='flex-row'>{total}</div>
             </div>
-            
+
           ))}
 
-          
-      </div>
+        </div>
+
+      ) : (
+        
+        <div className='form-item-summary'>
+          <div className='flex-table header'>
+            <div className='flex-row first'>Description</div>
+            <div className='flex-row'>Quantity</div>
+            <div className='flex-row'>Price ($)</div>
+            <div className='flex-row'>Total ($)</div>
+          </div>
+        </div>
+
+      )}
 
     </div>
   )

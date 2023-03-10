@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/Form.css'
+import ItemSummary from './ItemSummary'
 import AddInvoiceItems from './AddInvoiceItems';
 import EditInvoiceItems from './EditInvoiceItems';
 import InvoiceTotals from './InvoiceTotals';
@@ -17,7 +18,7 @@ export default function Form(props) {
           isEditingItem, editedItem, 
           handleEditedItem, confirmEdit,
           totals, handleTotals, 
-          showPreview } = props
+          preview, showPreview } = props
 
   return (
 
@@ -267,60 +268,45 @@ export default function Form(props) {
       {itemList.length > 0 ? (
         <div>
           <h3>Item Summary</h3>
-          <table className='item-summary'>
-            <thead>
-              <tr>
-                <td className='col-1'>Description</td>
-                <td className='col-2'>Quantity</td>
-                <td className='col-3'>Price ($)</td>
-                <td className='col-4'>Total ($)</td>
-                <td className='col-5'></td>
-              </tr>
-            </thead>
 
-            
-            {itemList.map((item, index) => (
+          <ItemSummary preview={preview} itemList={itemList} />
 
-              isEditingItem === item  ? (
+          {itemList.map((item, index) => (
 
-                <tbody className='edit-items' key={index}>
-                  <tr>
-                    <td>
-                      <EditInvoiceItems
-                        index={index}
-                        item={item}
-                        handleEditedItem={handleEditedItem}
-                        editedItem={editedItem}
-                        confirmEdit={confirmEdit}
-                      />
-                    </td>
-                  </tr>
-                </tbody>
+            isEditingItem === item ? (
+                
+              <div className='edit-items'>
+                <EditInvoiceItems
+                  index={index}
+                  item={item}
+                  handleEditedItem={handleEditedItem}
+                  editedItem={editedItem}
+                  confirmEdit={confirmEdit}
+                />
+              </div>
 
-              ) : (
+            ) : ( 
 
-                <tbody className='items' key={index}>
-                  <tr>
-                    <td>{item.description}</td>
-                    <td>{item.quantity}</td>
-                    <td>{item.price}</td>
-                    <td>{item.total}</td>
+              <div className='form-item-summary body'>
+                <div className='flex-table row' key={index}>
+                  <div className='flex-row first'>{item.description}</div>
+                  <div className='flex-row'>{item.quantity}</div>
+                  <div className='flex-row'>{item.price}</div>
+                  <div className='flex-row'>{item.total}</div>
 
+                  <div className='btn-container'>
+                    <button className='edit-btn' onClick={() => handleEdit(index)}>
+                      <FaRegEdit size={20} />
+                    </button>
+                    <button className='delete-btn' onClick={() => handleDelete(index)}>
+                      <RiDeleteBin5Line size={20} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )
 
-                    <td className='btn-container'>
-                      <button className='edit-btn' onClick={() => handleEdit(index)}>
-                        <FaRegEdit size={20} />
-                      </button>
-                      <button className='delete-btn' onClick={() => handleDelete(index)}>
-                        <RiDeleteBin5Line size={20} />
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-
-              )
-            ))}
-          </table>
+          ))}
 
           {/* <InvoiceTotals totals={totals} /> */}
         </div>

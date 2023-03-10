@@ -1,8 +1,9 @@
 .item-details {
     display: flex;
     gap: 0 15px;
-    /* width: 90%; */
+    width: 100%;
     justify-content: center;
+    
 }
 
 @media only screen and (max-width: 645px){
@@ -12,19 +13,20 @@
 }
 
 .item-details div:first-child {
-    width: 100%;
-    flex-grow: 2;
+    flex-grow: 1;
 }
 
 .item-details div {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     justify-content: center;
 }
 
 .item-details div:not(:first-of-type) {
-    width: 100px;
+    width: 90px;
+}
+.item-details div:last-of-type {
+    width: min-content;
 }
 
 .add-item-btn {
@@ -32,6 +34,7 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
+    width: 85px;
     padding: 0.8rem;
     background-color: #10b981;
     border: 2px solid #10b981;

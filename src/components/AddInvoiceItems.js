@@ -33,8 +33,8 @@ export default function AddInvoiceItems(props) {
     }
 
   return (
-    <div>
-        <form className='add-item' onSubmit={handleSubmit}>
+      <div className='add-item'>
+        <form onSubmit={handleSubmit}>
             <div className='item-details'>
                 <div>
                     <label htmlFor='description'>Item description</label>
