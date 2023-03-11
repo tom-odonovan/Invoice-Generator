@@ -18,6 +18,7 @@ export default function Form(props) {
     isEditingItem, editedItem,
     handleEditedItem, confirmEdit,
     totals, handleTotals,
+    paymentDetails, handlePaymentDetails,
     preview, showPreview } = props
 
   return (
@@ -322,15 +323,55 @@ export default function Form(props) {
         handleTotals={handleTotals}
       />
 
+      <h3>Payment</h3>
 
+      <div className='form-payment-details'>
+        <div>
+          <label htmlFor='accHolder'>Account holder</label>
+          <input
+            id='accHolder'
+            type='text'
+            name='accHolder'
+            required
+            placeholder='Account holder'
+            value={paymentDetails.accHolder || ''}
+            onChange={handlePaymentDetails}
+          ></input>
+        </div>
 
+        <div>
+          <label htmlFor='bsb'>BSB number</label>
+          <input
+            id='bsb'
+            type='text'
+            name='bsb'
+            required
+            placeholder='BSB Number'
+            value={paymentDetails.bsb || ''}
+            onChange={handlePaymentDetails}
+          ></input>
+        </div>
+
+        <div>
+          <label htmlFor='accNumber'>Account number</label>
+          <input
+            id='accNumber'
+            type='text'
+            name='accNumber'
+            required
+            placeholder='Account Number'
+            value={paymentDetails.accNumber || ''}
+            onChange={handlePaymentDetails}
+          ></input>
+        </div>
+      </div>
 
       <button
         className='preview-btn'
         onClick={showPreview}
       >Preview Invoice</button>
 
-
+        
     </div>
 
   )

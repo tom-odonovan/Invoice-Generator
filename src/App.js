@@ -116,6 +116,14 @@ function App() {
     setTotals({ subtotal: invoiceTotal, total: invoiceTotal })
   }, [itemList])
 
+  const handlePaymentDetails = (e) => {
+    const { name, value } = e.target;
+    setPaymentDetails((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
+  }
+
   const showPreview = () => {
     setPreview(true)
   }
@@ -136,6 +144,7 @@ function App() {
             item={item}
             itemList={itemList}
             totals={totals}
+            paymentDetails={paymentDetails}
             hidePreview={hidePreview}
           />
         ) : (
@@ -158,6 +167,8 @@ function App() {
             confirmEdit={confirmEdit}
             totals={totals}
             handleTotals={handleTotals}
+            paymentDetails={paymentDetails}
+            handlePaymentDetails={handlePaymentDetails}
             showPreview={showPreview}
           />
         )}
