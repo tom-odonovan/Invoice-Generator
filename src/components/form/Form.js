@@ -276,7 +276,7 @@ export default function Form(props) {
 
             isEditingItem === item ? (
 
-              <div className='edit-items'>
+              <div className='edit-items' key={index}>
                 <EditInvoiceItems
                   index={index}
                   item={item}
@@ -288,8 +288,8 @@ export default function Form(props) {
 
             ) : (
 
-              <div className='form-item-summary body'>
-                <div className='flex-table row' key={index}>
+                <div className='form-item-summary body' key={index}>
+                <div className='flex-table row' >
                   <div className='flex-row first'>{item.description}</div>
                   <div className='flex-row'>{item.quantity}</div>
                   <div className='flex-row'>{item.price}</div>

@@ -52,7 +52,7 @@ export default function AddInvoiceItems(props) {
                         <label htmlFor='quantity'>Quantity</label>
                         <input
                             required
-                            type='float'
+                            type='number'
                             min='0'
                             name='quantity'
                             placeholder='0'
@@ -64,7 +64,7 @@ export default function AddInvoiceItems(props) {
                         <label htmlFor='price'>Price</label>
                         <input
                             required
-                            type='float'
+                            type='number'
                             min='0'
                             name='price'
                             placeholder='$ 0.00'

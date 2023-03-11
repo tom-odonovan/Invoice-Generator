@@ -23,28 +23,37 @@ export default function Preview(props) {
   }
 
   return (
-    <div>
-      <Header handlePrint={handlePrint} />
-      <InvoiceDetails invoiceDetails={invoiceDetails} />
-      <div className='flex-components'>
-        <VendorDetails vendorDetails={vendorDetails} />
-        <ClientDetails clientDetails={clientDetails} />
+    <div className='invoice-preview'>
+      <div>
+        <Header handlePrint={handlePrint} />
+        <InvoiceDetails invoiceDetails={invoiceDetails} />
+        <div className='flex-components'>
+            <VendorDetails vendorDetails={vendorDetails} />
+            <ClientDetails clientDetails={clientDetails} />
+        </div>
       </div>
-      <ItemSummary preview={preview} itemList={itemList} />
-      <div className='flex-components'>
-        <PaymentDetails paymentDetails={paymentDetails}/>
-        <InvoiceTotals totals={totals} />
+
+      <div className='table'>
+        <ItemSummary preview={preview} itemList={itemList} />
+        <div className='flex-components'>
+          <PaymentDetails paymentDetails={paymentDetails}/>
+          <InvoiceTotals totals={totals} />
+        </div>
       </div>
       
-      <div className='flex-components'>
+      <div>
+        <div className='flex-components'>
         <ContactInfo
           phone={vendorDetails.phone}
           email={vendorDetails.email}
           website={vendorDetails.website}
         />
         <Notes vendorName={vendorDetails.name} />
+        </div>
+        <Footer hidePreview={hidePreview} />
       </div>
-      <Footer hidePreview={hidePreview} />
+      
+      
     </div>
   )
 }

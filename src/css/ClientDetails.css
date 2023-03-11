@@ -3,6 +3,7 @@
     align-items: start;
     justify-content: start;
     flex-direction: column;
+    /* margin: 30px 0; */
 }
 
 .client-details h2 {

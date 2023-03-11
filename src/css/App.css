@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@200&family=Open+Sans&family=Roboto&family=Source+Sans+Pro&display=swap');
+
 body {
     background-color: #f1f1f1;
+    color: #4f4f4f;
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Lato', sans-serif; */
+    /* font-family: 'Open Sans', sans-serif; */
+    /* font-family: 'Source Sans Pro', sans-serif; */
 }
 
 main {
-    margin: 1.25rem;
+    width: 210mm;
+    /* height: 307mm; */
+    /* margin: 1.25rem; */
     padding: 3rem;
     background-color: white;
     border-radius: 5px;
@@ -58,5 +68,12 @@ textarea::placeholder {
 @media only screen and (max-width: 750px) {
     main {
         padding: 2rem;
+    }
+}
+
+@media print {
+    main {
+        width: 210mm;
+        height: 307mm;
     }
 }
