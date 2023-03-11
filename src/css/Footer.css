@@ -17,3 +17,9 @@ footer .preview-btn {
     gap: 5px;
     padding: 0.7rem 1.5rem;
 }
+
+@media print {
+    footer .preview-btn {
+        display: none;
+    }
+}

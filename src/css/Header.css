@@ -61,3 +61,9 @@ header h1 {
 .send-btn:hover {
     color: #10b981;
 }
+
+@media print {
+    .print-btn {
+        display: none;
+    }
+}
