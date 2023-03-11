@@ -15,7 +15,8 @@
 .form-invoice-details,
 .address-ln-2,
 .form-vendor-details div,
-.form-client-details div {
+.form-client-details div,
+.form-payment-details {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -24,7 +25,8 @@
 }
 
 .form-invoice-details div,
-.address-ln-2 div {
+.address-ln-2 div,
+.form-payment-details div {
     display: flex;
     flex-direction: column;
     flex-grow: 1;

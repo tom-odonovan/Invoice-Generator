@@ -1,9 +1,10 @@
 .payment-details {
     display: flex;
+    align-self: flex-end;
     align-items: start;
     justify-content: end;
     flex-direction: column;
-    margin: 20px 0;
+    margin-top: 60px;
 }
 
 .payment-details h4 {
@@ -13,7 +14,20 @@
 .payment-details ul {
     padding: 0;
 }
+.payment-details li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
 
 .payment-details li {
     list-style: none;
+}
+
+.payment-details li:nth-child(2) {
+    background-color: #f5f5f5
+}
+
+.payment-details b {
+    padding-right: 40px;
 }

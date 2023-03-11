@@ -9,12 +9,12 @@ export default function InvoiceTotals({totals}) {
         <div className='invoice-totals-cont'>
             <div className='invoice-totals'>
                 <ul>
-                    <li><b>Subtotal:</b>$ {totals.subtotal}</li>
+                    <li><b>Subtotal:</b>$ {totals.subtotal || '0.00'}</li>
                     <li><b>Tax:</b>$ 0.00</li>
                     <li><b>Discount:</b>$ 0.00</li>
                 </ul>
                 <div>
-                    <p><b>Total:</b>$ {totals.total}</p>
+                    <p><b>Total:</b>$ {totals.total || '0.00'}</p>
                 </div>
             </div>
         </div>
