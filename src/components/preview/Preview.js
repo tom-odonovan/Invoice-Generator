@@ -16,7 +16,7 @@ import Header from './Header';
 
 export default function Preview(props) {
 
-  const { preview, invoiceDetails, vendorDetails, clientDetails, item, itemList, totals, paymentDetails, hidePreview } = props
+  const { preview, invoiceDetails, vendorDetails, clientDetails, item, itemList, totals, paymentDetails, notes, hidePreview } = props
 
   const handlePrint = () => {
     window.print()
@@ -48,7 +48,7 @@ export default function Preview(props) {
           email={vendorDetails.email}
           website={vendorDetails.website}
         />
-        <Notes vendorName={vendorDetails.name} />
+        <Notes notes={notes} />
         </div>
         <Footer hidePreview={hidePreview} />
       </div>

@@ -19,6 +19,7 @@ export default function Form(props) {
     handleEditedItem, confirmEdit,
     totals, handleTotals,
     paymentDetails, handlePaymentDetails,
+    notes, handleNotes,
     preview, showPreview } = props
 
   return (
@@ -323,7 +324,7 @@ export default function Form(props) {
         handleTotals={handleTotals}
       />
 
-      <h3>Payment</h3>
+      <h3>Payment Options</h3>
 
       <div className='form-payment-details'>
         <div>
@@ -365,6 +366,16 @@ export default function Form(props) {
           ></input>
         </div>
       </div>
+
+      <h3>Notes</h3>
+      <label htmlFor='notes'>Additional notes</label>
+      <textarea
+        id='notes' 
+        className='client-notes'
+        placeholder='Additional notes for the client'
+        value={notes || ''}
+        onChange={handleNotes}
+      ></textarea>
 
       <button
         className='preview-btn'

@@ -14,7 +14,7 @@ function App() {
   const [clientDetails, setClientDetails] = useState({})
   const [paymentDetails, setPaymentDetails] = useState({})
   const [contactInfo, setContactInfo] = useState({})
-  const [notes, setNotes] = useState({})
+  const [notes, setNotes] = useState('')
   const [item, setItem] = useState({})
   const [itemList, setItemList] = useState([])
   const [isEditingItem, setIsEditingItem] = useState(null)
@@ -124,6 +124,10 @@ function App() {
     }));
   }
 
+  const handleNotes = (e) => {
+    setNotes(e.target.value)
+  }
+
   const showPreview = () => {
     setPreview(true)
   }
@@ -145,6 +149,7 @@ function App() {
             itemList={itemList}
             totals={totals}
             paymentDetails={paymentDetails}
+            notes={notes}
             hidePreview={hidePreview}
           />
         ) : (
@@ -169,6 +174,8 @@ function App() {
             handleTotals={handleTotals}
             paymentDetails={paymentDetails}
             handlePaymentDetails={handlePaymentDetails}
+            notes={notes}
+            handleNotes={handleNotes}
             showPreview={showPreview}
           />
         )}

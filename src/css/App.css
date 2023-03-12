@@ -44,13 +44,17 @@ button:active {
 
 label {
     font-weight: 500;
-    color: #4f4f4f;
+    color: #777777;
 }
 
 input, select, textarea {
+    font-family: inherit;
     background-color: #f1f1f17a;
+    padding: 15px;
     margin-top: 5px;
     margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     color: #6a6a6a;
 }
 

@@ -38,13 +38,6 @@
     flex-grow: 1;
 }
 
-.template-form input,
-.template-form select {
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
 .template-form h3 {
     margin: 25px 0;
     padding-bottom: 10px;
@@ -100,4 +93,8 @@
 
 .template-form .preview-btn {
     margin-top: 20px;
+}
+
+.client-notes {
+    padding: 25px 15px;
 }

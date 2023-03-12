@@ -1,14 +1,22 @@
 .notes {
-    width: 300px;
     text-align: justify;
     display: flex;
     align-items: start;
     justify-content: end;
     flex-direction: column;
     margin: 20px 0;
-    margin-right: 100px;
 }
 
 .notes h4 {
     margin: 5px 0;
+}
+
+.notes p {
+    margin-top: 20px;
+}
+
+.notes-cont {
+    border: 1px solid rgba(0 0 0 / 0.2);
+    padding: 20px;
+    width: 350px;
 }

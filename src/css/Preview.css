@@ -19,11 +19,3 @@
 .invoice-preview .table {
     margin-bottom: 50px;
 }
-
-.invoice-preview > div:last-child{
-    /* border: 1px solid red; */
-    /* align-self: flex-end; */
-    /* justify-content: flex-end */
-    /* flex-grow: 1; */
-    /* margin-bottom: 100px */
-}
