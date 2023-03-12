@@ -1,7 +1,7 @@
 .vendor-details {
     display: flex;
-    align-items: start;
-    justify-content: start;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
     /* margin: 30px 0; */
 }

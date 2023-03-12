@@ -16,7 +16,7 @@ import Header from './Header';
 
 export default function Preview(props) {
 
-  const { preview, invoiceDetails, vendorDetails, clientDetails, item, itemList, totals, paymentDetails, notes, hidePreview } = props
+  const { preview, invoiceDetails, vendorDetails, clientDetails, itemList, totals, paymentDetails, notes, hidePreview } = props
 
   const handlePrint = () => {
     window.print()

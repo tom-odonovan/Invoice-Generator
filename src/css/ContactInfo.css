@@ -1,7 +1,7 @@
 .contact-info {
     display: flex;
-    align-items: start;
-    justify-content: end;
+    align-items: flex-start;
+    justify-content: flex-end;
     flex-direction: column;
     margin: 20px 0;
 }

@@ -13,7 +13,6 @@ function App() {
   const [vendorDetails, setVendorDetails] = useState({})
   const [clientDetails, setClientDetails] = useState({})
   const [paymentDetails, setPaymentDetails] = useState({})
-  const [contactInfo, setContactInfo] = useState({})
   const [notes, setNotes] = useState('')
   const [item, setItem] = useState({})
   const [itemList, setItemList] = useState([])
@@ -89,7 +88,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(editedItem)
     setEditedItem((prevState) => ({
       ...prevState,
       total: editedItem.quantity * editedItem.price || 0

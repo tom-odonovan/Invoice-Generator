@@ -5,8 +5,12 @@
     align-items: flex-start;
 }
 
+.flex-components:nth-child(3) {
+    align-items: flex-end;
+}
+
 .flex-components p {
-    margin: 5px;
+    margin: 5px 0;
 }
 
 .invoice-preview {

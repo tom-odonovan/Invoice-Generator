@@ -10,9 +10,9 @@ export default function ContactInfo(props) {
           <h4>Contact Information</h4>
           <ul>
             <li><b>Phone:</b>{phone}</li>
-            <li><b>Email:</b>{email}</li>
+        <li><b>Email:</b><a href={`mailto:${email}`}>{email}</a></li>
             { website ? (
-                    <li><b>Website:</b><a href='#'>{website}</a></li>
+                  <li><b>Website:</b><a href={`${website}`}>{website}</a></li>
                 ) : null 
             }
               

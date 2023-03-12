@@ -3,7 +3,6 @@ import '../../css/Form.css'
 import ItemSummary from '../preview/ItemSummary'
 import AddInvoiceItems from './AddInvoiceItems';
 import EditInvoiceItems from './EditInvoiceItems';
-import InvoiceTotals from '../preview/InvoiceTotals';
 import { RiDeleteBin5Line } from 'react-icons/ri'
 import { FaRegEdit } from 'react-icons/fa'
 
@@ -17,7 +16,7 @@ export default function Form(props) {
     handleDelete, handleEdit,
     isEditingItem, editedItem,
     handleEditedItem, confirmEdit,
-    totals, handleTotals,
+    handleTotals,
     paymentDetails, handlePaymentDetails,
     notes, handleNotes,
     preview, showPreview } = props

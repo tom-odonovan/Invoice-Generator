@@ -1,12 +1,11 @@
 import React from 'react'
-import ItemSummary from '../preview/ItemSummary'
 import '../../css/AddInvoiceItem.css'
 import { GoPlus } from 'react-icons/go'
 import { useRef } from 'react'
 
 
 export default function AddInvoiceItems(props) {
-    const { item, handleItem, itemList, handleItemList, handleTotals } = props
+    const { item, handleItem, handleItemList } = props
 
     const inputRef = useRef(null)
 

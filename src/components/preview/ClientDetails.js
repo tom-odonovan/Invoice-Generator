@@ -8,7 +8,7 @@ export default function ClientDetails({clientDetails}) {
   return (
     <div>
         <section className='client-details'>
-          <h2>{ name }</h2>
+          <span>Bill to:<h2>{name}</h2></span>
           <p>{ email }</p>
           <p>{ address }</p>
           <p>{suburb}, {state} {postcode}</p>  

@@ -43,9 +43,6 @@ Demo the latest build [here](https://tom-odonovan.github.io/Invoice-Generator/)
 
 ## Planned Improvements <a name="improvements"></a>
 
-- Add input for payment details
-- Calculate invoice totals
-- Edit Vendor Notes
 - Save and retrieve invoices from database
 - Save Client/Vendor information to database
 - Upload logo image to invoices 
