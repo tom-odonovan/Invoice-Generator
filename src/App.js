@@ -103,12 +103,6 @@ function App() {
     setEditedItem({});
   }
 
-  const handleTotals = () => {
-    // console.log(itemList)
-    // const invoiceTotal = itemList.reduce((result, item) => result + item.total, 0);
-    // setTotals({ total: invoiceTotal })
-  }
-
   useEffect(() => {
     const invoiceTotal = itemList.reduce((result, item) => result + item.total, 0);
     setTotals({ subtotal: invoiceTotal, total: invoiceTotal })
@@ -169,7 +163,6 @@ function App() {
             handleEditedItem={handleEditedItem}
             confirmEdit={confirmEdit}
             totals={totals}
-            handleTotals={handleTotals}
             paymentDetails={paymentDetails}
             handlePaymentDetails={handlePaymentDetails}
             notes={notes}

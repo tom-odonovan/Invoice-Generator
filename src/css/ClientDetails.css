@@ -4,6 +4,7 @@
     justify-content: flex-start;
     flex-direction: column;
     /* margin: 30px 0; */
+    padding: 0 0.5rem;
 }
 
 .client-details h2 {

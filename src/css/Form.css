@@ -95,6 +95,31 @@
     margin-top: 20px;
 }
 
+.invoice-totals {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.invoice-total div {
+    
+    display: flex;
+    justify-content: flex-end;
+}
+
+.invoice-total p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 15px;
+    padding-right: 145px;
+    background-color: #f5f5f5;
+    width: fit-content;
+    color: black;
+}
+.invoice-total b {
+    padding-right: 50px;
+}
+
 .client-notes {
     padding: 25px 15px;
 }

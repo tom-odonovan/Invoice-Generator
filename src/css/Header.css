@@ -27,13 +27,18 @@ header h1 {
     list-style: none;
 }
 
-.print-btn {
+.print-btn,
+.download-btn,
+.share-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
     padding: 0.5rem 1.2rem;
     margin: 0 5px;
+}
+
+.print-btn {
     background-color: #10b981;
     border: 2px solid #10b981;
 }
@@ -43,7 +48,7 @@ header h1 {
 }
 
 .download-btn {
-    margin: 0 5px;
+    
     background-color: #3b82f6;
     border: 2px solid #3b82f6;
 }
@@ -52,13 +57,13 @@ header h1 {
     color: #3b82f6;
 }
 
-.send-btn {
-    margin: 0 5px;
+.share-btn {
+    
     background-color: #10b981;
     border: 2px solid #10b981;
 }
 
-.send-btn:hover {
+.share-btn:hover {
     color: #10b981;
 }
 

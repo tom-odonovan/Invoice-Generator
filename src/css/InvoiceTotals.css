@@ -1,18 +1,3 @@
-/* .invoice-totals-cont{
-    display: flex;
-    align-items: flex-start;
-    justify-items: flex-end;
-    flex-direction: column;
-} */
-
-/* .invoice-totals {
-    display: flex;
-    align-items: start;
-    justify-content: end;
-    flex-direction: column;
-    
-} */
-
 .invoice-totals ul {
     padding: 0;
     margin-bottom: 0;

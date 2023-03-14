@@ -3,6 +3,7 @@
     align-items: flex-end;
     justify-items: flex-end;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .invoice-id {

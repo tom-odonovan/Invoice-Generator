@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 import '../../css/Preview.css'
 
@@ -13,47 +13,60 @@ import ContactInfo from './ContactInfo';
 import Footer from './Footer';
 import Header from './Header';
 
-
 export default function Preview(props) {
 
   const { preview, invoiceDetails, vendorDetails, clientDetails, itemList, totals, paymentDetails, notes, hidePreview } = props
+
+  const pdfContent = useRef(null)
 
   const handlePrint = () => {
     window.print()
   }
 
+  const handleDownload = () => {
+    
+  }
+
+  const handleShare = async () => {
+    
+  };
+
   return (
-    <div className='invoice-preview'>
+    <div className='invoice-preview' ref={pdfContent}>
       <div>
-        <Header handlePrint={handlePrint} />
+        <Header
+          handlePrint={handlePrint}
+          handleDownload={handleDownload}
+          handleShare={handleShare}
+        />
         <InvoiceDetails invoiceDetails={invoiceDetails} />
         <div className='flex-components'>
-            <VendorDetails vendorDetails={vendorDetails} />
-            <ClientDetails clientDetails={clientDetails} />
+          <VendorDetails vendorDetails={vendorDetails} />
+          <ClientDetails clientDetails={clientDetails} />
         </div>
       </div>
 
       <div className='table'>
         <ItemSummary preview={preview} itemList={itemList} />
         <div className='flex-components'>
-          <PaymentDetails paymentDetails={paymentDetails}/>
+          <PaymentDetails paymentDetails={paymentDetails} />
           <InvoiceTotals totals={totals} />
         </div>
       </div>
-      
+
       <div>
         <div className='flex-components'>
-        <ContactInfo
-          phone={vendorDetails.phone}
-          email={vendorDetails.email}
-          website={vendorDetails.website}
-        />
-        <Notes notes={notes} />
+          <ContactInfo
+            phone={vendorDetails.phone}
+            email={vendorDetails.email}
+            website={vendorDetails.website}
+          />
+          <Notes notes={notes} />
         </div>
         <Footer hidePreview={hidePreview} />
       </div>
-      
-      
+
+
     </div>
   )
 }

@@ -16,9 +16,8 @@ export default function Form(props) {
     handleDelete, handleEdit,
     isEditingItem, editedItem,
     handleEditedItem, confirmEdit,
-    handleTotals,
     paymentDetails, handlePaymentDetails,
-    notes, handleNotes,
+    totals, notes, handleNotes,
     preview, showPreview } = props
 
   return (
@@ -309,7 +308,11 @@ export default function Form(props) {
 
           ))}
 
-          {/* <InvoiceTotals totals={totals} /> */}
+          <div className='invoice-total'>
+            <div>
+              <p><b>Total:</b>$ {totals.total}</p>
+            </div>
+          </div>
         </div>
 
       ) : null}
@@ -318,9 +321,7 @@ export default function Form(props) {
       <AddInvoiceItems
         item={item}
         handleItem={handleItem}
-        itemList={itemList}
         handleItemList={handleItemList}
-        handleTotals={handleTotals}
       />
 
       <h3>Payment Options</h3>
