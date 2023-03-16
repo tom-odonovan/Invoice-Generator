@@ -12,10 +12,6 @@
     padding-right: 30px;
 }
 
-.invoice-totals div {
-    width: 100%;
-}
-
 .invoice-totals p {
     display: flex;
     justify-content: space-between;

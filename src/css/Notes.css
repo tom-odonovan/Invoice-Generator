@@ -1,8 +1,6 @@
 .notes {
     text-align: justify;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
     flex-direction: column;
     margin: 20px 0;
 }
@@ -16,7 +14,6 @@
 }
 
 .notes-cont {
-    /* border: 1px solid rgba(0 0 0 / 0.1); */
     background-color: #f5f5f5;
     border-radius: 2px;
     padding: 20px;

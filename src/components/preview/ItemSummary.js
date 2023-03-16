@@ -37,8 +37,8 @@ export default function ItemSummary(props) {
           <div className='flex-table header'>
             <div className='flex-row first'>Description</div>
             <div className='flex-row'>Quantity</div>
-            <div className='flex-row'>Price ($)</div>
-            <div className='flex-row'>Total ($)</div>
+            <div className='flex-row'>Price</div>
+            <div className='flex-row'>Total</div>
           </div>
         </div>
 

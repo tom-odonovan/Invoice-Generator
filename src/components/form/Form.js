@@ -287,12 +287,12 @@ export default function Form(props) {
 
             ) : (
 
-                <div className='form-item-summary body' key={index}>
+              <div className='form-item-summary body' key={index}>
                 <div className='flex-table row' >
                   <div className='flex-row first'>{item.description}</div>
                   <div className='flex-row'>{item.quantity}</div>
-                  <div className='flex-row'>{item.price}</div>
-                  <div className='flex-row'>{item.total}</div>
+                  <div className='flex-row'>$ {item.price}</div>
+                  <div className='flex-row'>$ {item.total}</div>
 
                   <div className='btn-container'>
                     <button className='edit-btn' onClick={() => handleEdit(index)}>
