@@ -39,7 +39,7 @@ export default function Preview(props) {
           handleDownload={handleDownload}
           handleShare={handleShare}
         />
-        <InvoiceDetails invoiceDetails={invoiceDetails} />
+        <InvoiceDetails abn={vendorDetails.abn}  invoiceDetails={invoiceDetails} />
         <div className='flex-components'>
           <VendorDetails vendorDetails={vendorDetails} />
           <ClientDetails clientDetails={clientDetails} />

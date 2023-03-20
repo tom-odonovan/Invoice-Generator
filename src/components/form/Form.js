@@ -71,6 +71,19 @@ export default function Form(props) {
       <h3>Personal Details</h3>
 
       <div className='form-vendor-details'>
+
+        <label htmlFor='abn'>Australian Business Number (ABN)</label>
+        <input
+          id='abn'
+          type='text'
+          name='abn'
+          maxLength={11}
+          required
+          placeholder='Please enter your 11-digit unique business identifier'
+          value={vendorDetails.abn || ''}
+          onChange={handleVendorDetails}
+        ></input>
+
         <div>
           <div>
             <label htmlFor='name'>Your Full Name</label>
@@ -155,23 +168,29 @@ export default function Form(props) {
           </div>
         </div>
 
-        <label htmlFor='phone'>Phone number</label>
-        <input
-          type='text'
-          name='phone'
-          placeholder='Enter your phone number'
-          value={vendorDetails.phone || ''}
-          onChange={handleVendorDetails}
-        ></input>
+        <div>
+          <div>
+            <label htmlFor='phone'>Phone number</label>
+            <input
+              type='text'
+              name='phone'
+              placeholder='Enter your phone number'
+              value={vendorDetails.phone || ''}
+              onChange={handleVendorDetails}
+            ></input>
+          </div>
 
-        <label htmlFor='website'>Website (optional)</label>
-        <input
-          type='text'
-          name='website'
-          placeholder='Your website url'
-          value={vendorDetails.website || ''}
-          onChange={handleVendorDetails}
-        ></input>
+          <div>
+            <label htmlFor='website'>Website (optional)</label>
+            <input
+              type='text'
+              name='website'
+              placeholder='Your website url'
+              value={vendorDetails.website || ''}
+              onChange={handleVendorDetails}
+            ></input>
+          </div>
+        </div>
       </div>
 
 
@@ -346,6 +365,7 @@ export default function Form(props) {
             id='bsb'
             type='text'
             name='bsb'
+            maxLength={6}
             required
             placeholder='BSB Number'
             value={paymentDetails.bsb || ''}
