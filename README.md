@@ -1,11 +1,10 @@
 # Invoice Generator
 
-<div style="height: auto; width: fit-content; display: inline;">
-  <img src="./public/form_screenshot.png" alt="Form screenshot" style="max-height: 550px; min-width: auto">
-</div>
-<div style="height: auto; width: fit-content; display: inline;">
-  <img src="./public/preview_screenshot.png" alt="Preview screenshot" style="max-height: 550px; min-width: auto">
-</div>
+
+<img src="./public/form_screenshot.png" alt="Form screenshot" style="max-height: 550px; min-width: auto"> <img src="./public/preview_screenshot.png" alt="Preview screenshot" style="max-height: 550px; min-width: auto">
+
+
+
 </br>
 
 ## Table of Contents
