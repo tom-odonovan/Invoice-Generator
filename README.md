@@ -89,18 +89,22 @@ Demo the latest build [here](https://tom-odonovan.github.io/Invoice-Generator/)
 Contributions to the Invoice Generator app are welcome and encouraged! To contribute, follow these steps:
 
 1. Fork the repository
+
 2. Create a new branch 
     ```bash
     git checkout -b my-new-feature
     ```
+
 3. Make changes and commit
     ```bash
     git commit -m 'Add some feature'
     ```
+
 4. Push to the branch
     ```bash
     git push origin my-new-feature
     ```
+
 5. Create a new Pull Request
 </br>
 
@@ -119,6 +123,6 @@ Successful tests will show a list of passing tests and exit with a status of 0. 
 
 ## Licence <a name="licence"></a>
 
-This project is licenced under [...project licence here](#) 
+This project is licenced under the MIT License.
 </br>
 </br>
