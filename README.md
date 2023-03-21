@@ -1,9 +1,7 @@
 # Invoice Generator
 
-
-<img src="./public/form_screenshot.png" alt="Form screenshot" style="max-height: 550px; min-width: auto"> <img src="./public/preview_screenshot.png" alt="Preview screenshot" style="max-height: 550px; min-width: auto">
-
-
+<img height='550' src="./public/form_screenshot.png" alt="Form screenshot"> <img height='550' src="./public/preview_screenshot.png" alt="Preview screenshot">
+</br>
 
 </br>
 
