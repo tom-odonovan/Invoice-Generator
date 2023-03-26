@@ -1,5 +1,6 @@
 # Invoice Generator
 
+</br>
 <img height='550' src="./public/form_screenshot.png" alt="Form screenshot"> <img height='550' src="./public/preview_screenshot.png" alt="Preview screenshot">
 </br>
 

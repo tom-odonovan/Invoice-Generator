@@ -52,6 +52,7 @@ export default function AddInvoiceItems(props) {
                         <input
                             required
                             type='number'
+                            step={0.25}
                             min='0'
                             name='quantity'
                             placeholder='0'
