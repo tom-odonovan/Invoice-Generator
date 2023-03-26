@@ -2,43 +2,52 @@ import React from 'react'
 import '../../css/AddInvoiceItem.css'
 import { GoPlus } from 'react-icons/go'
 import { useRef } from 'react'
+import { toast, ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 
 export default function AddInvoiceItems(props) {
-    const { item, handleItem, handleItemList } = props
+    const { item, handleItem, handleItemList, error} = props
 
     const inputRef = useRef(null)
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const newItem = {
-            description: item.description,
-            quantity: item.quantity,
-            price: item.price,
-            total: item.total
+        if (!item.description) {
+            toast.error("Please add item description")
+        } else if (!item.quantity) {
+            toast.error("Please fill in item quantity")
+        } else if (!item.price) {
+            toast.error("Please fill in item price")
+        } else {
+            const newItem = {
+                description: item.description,
+                quantity: item.quantity,
+                price: item.price,
+                total: item.total
+            }
+
+            handleItemList(newItem)
+
+            // Reset state of item
+            handleItem({ description: '', quantity: '', price: '', total: '' });
+
+            // Set focus back to first input field
+            inputRef.current.focus()
         }
-
-        handleItemList(newItem)
-
-        // handleTotals()
-
-
-        // Reset state of item
-        handleItem({ description: '', quantity: '', price: '', total: '' });
-
-        // Set focus back to first input field
-        inputRef.current.focus()
     }
 
     return (
         <div className='add-item'>
+
+            <ToastContainer position="top-right" theme="colored" />
+
             <form onSubmit={handleSubmit}>
                 <div className='item-details'>
                     <div>
                         <label htmlFor='description'>Item description</label>
                         <input
-                            required
                             type='text'
                             name='description'
                             placeholder='Item description'
@@ -50,7 +59,6 @@ export default function AddInvoiceItems(props) {
                     <div>
                         <label htmlFor='quantity'>Quantity</label>
                         <input
-                            required
                             type='number'
                             step={0.25}
                             min='0'
@@ -63,7 +71,6 @@ export default function AddInvoiceItems(props) {
                     <div>
                         <label htmlFor='price'>Price</label>
                         <input
-                            required
                             type='number'
                             min='0'
                             name='price'

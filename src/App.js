@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react'
 
 import Form from './components/form/Form';
 import Preview from './components/preview/Preview';
+import { toast, ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+
 
 
 function App() {
@@ -19,6 +22,7 @@ function App() {
   const [isEditingItem, setIsEditingItem] = useState(null)
   const [editedItem, setEditedItem] = useState({})
   const [totals, setTotals] = useState({})
+  const [error, setError] = useState(false)
 
   const handleInvoiceDetails = (e) => {
     const { name, value } = e.target;
@@ -121,7 +125,14 @@ function App() {
   }
 
   const showPreview = () => {
-    setPreview(true)
+    if(!invoiceDetails.number || !invoiceDetails.dueDate || !vendorDetails.abn || !vendorDetails.name || !vendorDetails.email || !vendorDetails.address || !vendorDetails.suburb || !vendorDetails.state || !vendorDetails.postcode || !clientDetails.name || !clientDetails.email || !clientDetails.address ||!clientDetails.suburb || !clientDetails.state || !clientDetails.postcode ||!paymentDetails.accHolder || !paymentDetails.bsb || !paymentDetails.accNumber) {
+      setError(true)
+      toast.error("Please fill in required feilds")
+    } else {
+      setPreview(true)
+      setError(false)
+    }
+    
   }
 
   const hidePreview = () => {
@@ -145,30 +156,35 @@ function App() {
             hidePreview={hidePreview}
           />
         ) : (
-          <Form
-            invoiceDetails={invoiceDetails}
-            handleInvoiceDetails={handleInvoiceDetails}
-            vendorDetails={vendorDetails}
-            handleVendorDetails={handleVendorDetails}
-            clientDetails={clientDetails}
-            handleClientDetails={handleClientDetails}
-            item={item}
-            handleItem={handleItem}
-            itemList={itemList}
-            handleItemList={handleItemList}
-            handleDelete={handleDelete}
-            handleEdit={handleEdit}
-            isEditingItem={isEditingItem}
-            editedItem={editedItem}
-            handleEditedItem={handleEditedItem}
-            confirmEdit={confirmEdit}
-            totals={totals}
-            paymentDetails={paymentDetails}
-            handlePaymentDetails={handlePaymentDetails}
-            notes={notes}
-            handleNotes={handleNotes}
-            showPreview={showPreview}
-          />
+          <>
+            <ToastContainer position="top-right" theme="colored" />
+
+            <Form
+              invoiceDetails={invoiceDetails}
+              handleInvoiceDetails={handleInvoiceDetails}
+              vendorDetails={vendorDetails}
+              handleVendorDetails={handleVendorDetails}
+              clientDetails={clientDetails}
+              handleClientDetails={handleClientDetails}
+              item={item}
+              handleItem={handleItem}
+              itemList={itemList}
+              handleItemList={handleItemList}
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+              isEditingItem={isEditingItem}
+              editedItem={editedItem}
+              handleEditedItem={handleEditedItem}
+              confirmEdit={confirmEdit}
+              totals={totals}
+              paymentDetails={paymentDetails}
+              handlePaymentDetails={handlePaymentDetails}
+              notes={notes}
+              handleNotes={handleNotes}
+              showPreview={showPreview}
+              error={error}
+            />
+          </>
         )}
 
       </main>

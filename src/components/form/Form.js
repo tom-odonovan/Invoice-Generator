@@ -6,6 +6,7 @@ import EditInvoiceItems from './EditInvoiceItems';
 import { RiDeleteBin5Line } from 'react-icons/ri'
 import { FaRegEdit } from 'react-icons/fa'
 
+
 export default function Form(props) {
 
   const { invoiceDetails, handleInvoiceDetails,
@@ -18,7 +19,8 @@ export default function Form(props) {
     handleEditedItem, confirmEdit,
     paymentDetails, handlePaymentDetails,
     totals, notes, handleNotes,
-    preview, showPreview } = props
+    preview, showPreview, 
+    error} = props
 
   return (
 
@@ -32,6 +34,7 @@ export default function Form(props) {
         <div>
           <label htmlFor='invoiceNo'>Invoice number</label>
           <input
+            className={error && !invoiceDetails.number ? 'error' : ''}
             type='text'
             name='number'
             required
@@ -56,6 +59,7 @@ export default function Form(props) {
         <div>
           <label htmlFor='invoiceNo'>Due date</label>
           <input
+            className={error && !invoiceDetails.dueDate ? 'error' : ''}
             type='date'
             name='dueDate'
             required
@@ -74,11 +78,11 @@ export default function Form(props) {
 
         <label htmlFor='abn'>Australian Business Number (ABN)</label>
         <input
+          className={error && !vendorDetails.abn ? 'error' : ''}
           id='abn'
           type='text'
           name='abn'
           maxLength={11}
-          required
           placeholder='Please enter your 11-digit unique business identifier'
           value={vendorDetails.abn || ''}
           onChange={handleVendorDetails}
@@ -88,9 +92,9 @@ export default function Form(props) {
           <div>
             <label htmlFor='name'>Your Full Name</label>
             <input
+              className={error && !vendorDetails.name ? 'error' : ''}
               type='text'
               name='name'
-              required
               placeholder='Enter your name'
               value={vendorDetails.name || ''}
               onChange={handleVendorDetails}
@@ -100,9 +104,9 @@ export default function Form(props) {
           <div>
             <label htmlFor='email'>Email address</label>
             <input
+              className={error && !vendorDetails.email ? 'error' : ''}
               type='email'
               name='email'
-              required
               placeholder='Enter your email'
               value={vendorDetails.email || ''}
               onChange={handleVendorDetails}
@@ -114,9 +118,9 @@ export default function Form(props) {
 
         <label htmlFor='address'>Address</label>
         <input
+          className={error && !vendorDetails.address ? 'error' : ''}
           type='text'
           name='address'
-          required
           placeholder='Enter your address'
           value={vendorDetails.address || ''}
           onChange={handleVendorDetails}
@@ -126,9 +130,9 @@ export default function Form(props) {
           <div>
             <label htmlFor='suburb'>Suburb</label>
             <input
+              className={error && !vendorDetails.suburb ? 'error' : ''}
               type='text'
               name='suburb'
-              required
               placeholder='Suburb'
               value={vendorDetails.suburb || ''}
               onChange={handleVendorDetails}
@@ -138,8 +142,8 @@ export default function Form(props) {
           <div>
             <label htmlFor='state'>State/territory</label>
             <select
+              className={error && !vendorDetails.state ? 'error' : ''}
               name='state'
-              required
               value={vendorDetails.state || ''}
               onChange={handleVendorDetails}
             >
@@ -158,9 +162,9 @@ export default function Form(props) {
           <div>
             <label htmlFor='postcode'>Postcode</label>
             <input
+              className={error && !vendorDetails.postcode ? 'error' : ''}
               type='text'
               name='postcode'
-              required
               placeholder='Postcode'
               value={vendorDetails.postcode || ''}
               onChange={handleVendorDetails}
@@ -170,7 +174,7 @@ export default function Form(props) {
 
         <div>
           <div>
-            <label htmlFor='phone'>Phone number</label>
+            <label htmlFor='phone'>Phone number (optional)</label>
             <input
               type='text'
               name='phone'
@@ -203,9 +207,9 @@ export default function Form(props) {
           <div>
             <label htmlFor='clientName'>Client's Name</label>
             <input
+              className={error && !clientDetails.name ? 'error' : ''}
               type='text'
               name='name'
-              required
               placeholder="Enter your client's name"
               value={clientDetails.name || ''}
               onChange={handleClientDetails}
@@ -215,9 +219,9 @@ export default function Form(props) {
           <div>
             <label htmlFor='clientEmail'>Client's email address</label>
             <input
+              className={error && !clientDetails.email ? 'error' : ''}
               type='email'
               name='email'
-              required
               placeholder="Enter your client's email"
               value={clientDetails.email || ''}
               onChange={handleClientDetails}
@@ -229,9 +233,9 @@ export default function Form(props) {
 
         <label htmlFor='clientAddress'>Client's Address</label>
         <input
+          className={error && !clientDetails.address ? 'error' : ''}
           type='text'
           name='address'
-          required
           placeholder="Enter your client's address"
           value={clientDetails.address || ''}
           onChange={handleClientDetails}
@@ -241,9 +245,9 @@ export default function Form(props) {
           <div>
             <label htmlFor='clientSuburb'>Suburb</label>
             <input
+              className={error && !clientDetails.suburb ? 'error' : ''}
               type='text'
               name='suburb'
-              required
               placeholder='Suburb'
               value={clientDetails.suburb || ''}
               onChange={handleClientDetails}
@@ -253,8 +257,8 @@ export default function Form(props) {
           <div>
             <label htmlFor='clientState'>State/territory</label>
             <select
+              className={error && !clientDetails.state ? 'error' : ''}
               name='state'
-              required
               value={clientDetails.state || ''}
               onChange={handleClientDetails}
             >
@@ -273,9 +277,9 @@ export default function Form(props) {
           <div>
             <label htmlFor='clientPostcode'>Postcode</label>
             <input
+              className={error && !clientDetails.postcode ? 'error' : ''}
               type='text'
               name='postcode'
-              required
               placeholder='Postcode'
               value={clientDetails.postcode || ''}
               onChange={handleClientDetails}
@@ -341,6 +345,7 @@ export default function Form(props) {
         item={item}
         handleItem={handleItem}
         handleItemList={handleItemList}
+        error={error}
       />
 
       <h3>Payment Options</h3>
@@ -349,10 +354,10 @@ export default function Form(props) {
         <div>
           <label htmlFor='accHolder'>Account holder</label>
           <input
+            className={error && !paymentDetails.accHolder ? 'error' : ''}
             id='accHolder'
             type='text'
             name='accHolder'
-            required
             placeholder='Account holder'
             value={paymentDetails.accHolder || ''}
             onChange={handlePaymentDetails}
@@ -362,11 +367,11 @@ export default function Form(props) {
         <div>
           <label htmlFor='bsb'>BSB number</label>
           <input
+            className={error && !paymentDetails.bsb ? 'error' : ''}
             id='bsb'
             type='text'
             name='bsb'
             maxLength={6}
-            required
             placeholder='BSB Number'
             value={paymentDetails.bsb || ''}
             onChange={handlePaymentDetails}
@@ -376,10 +381,10 @@ export default function Form(props) {
         <div>
           <label htmlFor='accNumber'>Account number</label>
           <input
+            className={error && !paymentDetails.accNumber ? 'error' : ''}
             id='accNumber'
             type='text'
             name='accNumber'
-            required
             placeholder='Account Number'
             value={paymentDetails.accNumber || ''}
             onChange={handlePaymentDetails}
