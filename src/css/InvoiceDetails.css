@@ -1,7 +1,7 @@
 .invoice-details {
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex-direction: row;
     margin-bottom: 20px;
     padding-left: 0.5rem;

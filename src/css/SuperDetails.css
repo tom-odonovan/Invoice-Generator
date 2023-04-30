@@ -1,0 +1,37 @@
+.super-details {
+    display: flex;
+    align-self: flex-end;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.super-details h4 {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0.5rem;
+}
+
+.super-details ul {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.super-details li {
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 0.5rem;
+}
+
+.super-details li {
+    list-style: none;
+}
+
+.super-details li:nth-child(2), .super-details li:nth-child(4) {
+    background-color: #f5f5f5;
+    border-radius: 2px;
+}
+
+.super-details b {
+    width: 120px;
+}

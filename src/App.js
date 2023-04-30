@@ -6,6 +6,7 @@ import Form from './components/form/Form';
 import Preview from './components/preview/Preview';
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import sample from './components/form/SampleFormData';
 
 
 
@@ -23,6 +24,8 @@ function App() {
   const [editedItem, setEditedItem] = useState({})
   const [totals, setTotals] = useState({})
   const [error, setError] = useState(false)
+  const [superDetails, setSuperDetails] = useState({})
+  const [isChecked, setIsChecked] = useState(false)
 
   const handleInvoiceDetails = (e) => {
     const { name, value } = e.target;
@@ -119,13 +122,20 @@ function App() {
       [name]: value
     }));
   }
+  const handleSuperDetails = (e) => {
+    const { name, value } = e.target;
+    setSuperDetails((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
+  }
 
   const handleNotes = (e) => {
     setNotes(e.target.value)
   }
 
   const showPreview = () => {
-    if(!invoiceDetails.number || !invoiceDetails.dueDate || !vendorDetails.abn || !vendorDetails.name || !vendorDetails.email || !vendorDetails.address || !vendorDetails.suburb || !vendorDetails.state || !vendorDetails.postcode || !clientDetails.name || !clientDetails.email || !clientDetails.address ||!clientDetails.suburb || !clientDetails.state || !clientDetails.postcode ||!paymentDetails.accHolder || !paymentDetails.bsb || !paymentDetails.accNumber) {
+    if (!invoiceDetails.number || !invoiceDetails.dueDate || !vendorDetails.abn || !vendorDetails.name || !vendorDetails.email || !vendorDetails.address || !vendorDetails.suburb || !vendorDetails.state || !vendorDetails.postcode || !clientDetails.name || !clientDetails.email || !clientDetails.address || !clientDetails.suburb || !clientDetails.state || !clientDetails.postcode || !paymentDetails.accHolder || !paymentDetails.bsb || !paymentDetails.accNumber || !superDetails.fundName || !superDetails.fundABN || !superDetails.usi || !superDetails.memberNumber) {
       setError(true)
       toast.error("Please fill in required feilds")
     } else {
@@ -138,6 +148,19 @@ function App() {
   const hidePreview = () => {
     setPreview(false)
   }
+
+  const handleAutofill = () => {
+    setIsChecked(!isChecked)
+  }
+
+  useEffect(() => {
+    {isChecked ? setInvoiceDetails(sample.invoiceDetails) : setInvoiceDetails({})}
+    {isChecked ? setVendorDetails(sample.vendorDetails) : setVendorDetails({})}
+    {isChecked ? setClientDetails(sample.clientDetails) : setClientDetails({})}
+    {isChecked ? setPaymentDetails(sample.paymentDetails) : setPaymentDetails({})}
+    {isChecked ? setSuperDetails(sample.superDetails) : setSuperDetails({})}
+    
+  }, [isChecked])
 
   return (
     <div className="App">
@@ -152,6 +175,7 @@ function App() {
             itemList={itemList}
             totals={totals}
             paymentDetails={paymentDetails}
+            superDetails={superDetails}
             notes={notes}
             hidePreview={hidePreview}
           />
@@ -179,10 +203,14 @@ function App() {
               totals={totals}
               paymentDetails={paymentDetails}
               handlePaymentDetails={handlePaymentDetails}
+              superDetails={superDetails}
+              handleSuperDetails={handleSuperDetails}
               notes={notes}
               handleNotes={handleNotes}
               showPreview={showPreview}
               error={error}
+              isChecked={isChecked}
+              handleAutofill={handleAutofill}
             />
           </>
         )}

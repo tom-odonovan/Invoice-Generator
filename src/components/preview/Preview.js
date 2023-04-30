@@ -12,10 +12,11 @@ import PaymentDetails from './PaymentDetails';
 import ContactInfo from './ContactInfo';
 import Footer from './Footer';
 import Header from './Header';
+import SuperDetails from './SuperDetails';
 
 export default function Preview(props) {
 
-  const { preview, invoiceDetails, vendorDetails, clientDetails, itemList, totals, paymentDetails, notes, hidePreview } = props
+  const { preview, invoiceDetails, vendorDetails, clientDetails, itemList, totals, paymentDetails, superDetails, notes, hidePreview } = props
 
   const pdfContent = useRef(null)
 
@@ -33,15 +34,19 @@ export default function Preview(props) {
 
   return (
     <div className='invoice-preview' ref={pdfContent}>
+      <Header
+        handlePrint={handlePrint}
+        handleDownload={handleDownload}
+        handleShare={handleShare}
+      />
       <div>
-        <Header
-          handlePrint={handlePrint}
-          handleDownload={handleDownload}
-          handleShare={handleShare}
-        />
-        <InvoiceDetails abn={vendorDetails.abn}  invoiceDetails={invoiceDetails} />
+        
         <div className='flex-components'>
           <VendorDetails vendorDetails={vendorDetails} />
+          <InvoiceDetails invoiceDetails={invoiceDetails} />
+        </div>
+        <div className='flex-components'>
+          <SuperDetails superDetails={superDetails} />
           <ClientDetails clientDetails={clientDetails} />
         </div>
       </div>

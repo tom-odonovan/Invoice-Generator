@@ -18,15 +18,26 @@ export default function Form(props) {
     isEditingItem, editedItem,
     handleEditedItem, confirmEdit,
     paymentDetails, handlePaymentDetails,
+    superDetails, handleSuperDetails,
     totals, notes, handleNotes,
     preview, showPreview, 
-    error} = props
+    error, isChecked, handleAutofill} = props
 
   return (
 
     <div className='template-form'>
 
       <h2>New Invoice</h2>
+
+      <div className='autofill'>
+        <label htmlFor='checkbox'>Auto-fill form with sample data</label>
+        <input
+          className='checkbox'
+          type='checkbox'
+          checked={isChecked}
+          onChange={handleAutofill}
+        ></input>
+      </div>
 
       {/* INVOICE DETAILS */}
 
@@ -372,7 +383,7 @@ export default function Form(props) {
             type='text'
             name='bsb'
             maxLength={6}
-            placeholder='BSB Number'
+            placeholder='BSB number'
             value={paymentDetails.bsb || ''}
             onChange={handlePaymentDetails}
           ></input>
@@ -385,9 +396,67 @@ export default function Form(props) {
             id='accNumber'
             type='text'
             name='accNumber'
-            placeholder='Account Number'
+            placeholder='Account number'
             value={paymentDetails.accNumber || ''}
             onChange={handlePaymentDetails}
+          ></input>
+        </div>
+      </div>
+
+      <h3>Superannuation Fund Details</h3>
+
+      <div className='form-payment-details'>
+        <div>
+          <label htmlFor='fundName'>Fund Name</label>
+          <input
+            className={error && !superDetails.fundName ? 'error' : ''}
+            id='fundName'
+            type='text'
+            name='fundName'
+            placeholder="Name of nominated super fund"
+            value={superDetails.fundName || ''}
+            onChange={handleSuperDetails}
+          ></input>
+        </div>
+
+        <div>
+          <label htmlFor='fundABN'>ABN</label>
+          <input
+            className={error && !superDetails.fundABN ? 'error' : ''}
+            id='fundABN'
+            type='text'
+            name='fundABN'
+            placeholder="The fund/RSA's ABN"
+            value={superDetails.fundABN || ''}
+            onChange={handleSuperDetails}
+          ></input>
+        </div>
+      </div>
+
+      <div className='form-payment-details'>
+        <div>
+          <label htmlFor='usi'>USI number</label>
+          <input
+            className={error && !superDetails.usi ? 'error' : ''}
+            id='usi'
+            type='text'
+            name='usi'
+            placeholder='Unique Superannuation Identifier'
+            value={superDetails.usi || ''}
+            onChange={handleSuperDetails}
+          ></input>
+        </div>
+
+        <div>
+          <label htmlFor='memberNumber'>Membership number</label>
+          <input
+            className={error && !superDetails.memberNumber ? 'error' : ''}
+            id='memberNumber'
+            type='text'
+            name='memberNumber'
+            placeholder='Fund membership number'
+            value={superDetails.memberNumber || ''}
+            onChange={handleSuperDetails}
           ></input>
         </div>
       </div>
