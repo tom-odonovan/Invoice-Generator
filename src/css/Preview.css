@@ -5,6 +5,7 @@
     align-items: flex-start;
 }
 
+.flex-components:nth-child(2),
 .flex-components:nth-child(3) {
     align-items: flex-end;
 }
