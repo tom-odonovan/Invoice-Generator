@@ -26,6 +26,7 @@ function App() {
   const [error, setError] = useState(false)
   const [superDetails, setSuperDetails] = useState({})
   const [isChecked, setIsChecked] = useState(false)
+  const [showSuper, setShowSuper] = useState(false)
 
   const handleInvoiceDetails = (e) => {
     const { name, value } = e.target;
@@ -135,7 +136,7 @@ function App() {
   }
 
   const showPreview = () => {
-    if (!invoiceDetails.number || !invoiceDetails.dueDate || !vendorDetails.abn || !vendorDetails.name || !vendorDetails.email || !vendorDetails.address || !vendorDetails.suburb || !vendorDetails.state || !vendorDetails.postcode || !clientDetails.name || !clientDetails.email || !clientDetails.address || !clientDetails.suburb || !clientDetails.state || !clientDetails.postcode || !paymentDetails.accHolder || !paymentDetails.bsb || !paymentDetails.accNumber || !superDetails.fundName || !superDetails.fundABN || !superDetails.usi || !superDetails.memberNumber) {
+    if (!invoiceDetails.number || !invoiceDetails.dueDate || !vendorDetails.abn || !vendorDetails.name || !vendorDetails.email || !vendorDetails.address || !vendorDetails.suburb || !vendorDetails.state || !vendorDetails.postcode || !clientDetails.name || !clientDetails.email || !clientDetails.address || !clientDetails.suburb || !clientDetails.state || !clientDetails.postcode || !paymentDetails.accHolder || !paymentDetails.bsb || !paymentDetails.accNumber) {
       setError(true)
       toast.error("Please fill in required feilds")
     } else {
@@ -176,6 +177,7 @@ function App() {
             itemList={itemList}
             totals={totals}
             paymentDetails={paymentDetails}
+            showSuper={showSuper}
             superDetails={superDetails}
             notes={notes}
             hidePreview={hidePreview}
@@ -212,6 +214,8 @@ function App() {
               error={error}
               isChecked={isChecked}
               handleAutofill={handleAutofill}
+              showSuper={showSuper}
+              setShowSuper={setShowSuper}
             />
           </>
         )}

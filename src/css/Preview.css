@@ -2,6 +2,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-end;
+}
+
+.flex-col {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: flex-start;
 }
 

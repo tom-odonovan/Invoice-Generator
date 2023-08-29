@@ -125,9 +125,13 @@
     border: 3px solid rgba(255, 0, 0, 0.3);
 }
 
-.autofill {
+.checkbox-container {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
 }
+
 .checkbox {
+    margin: 0;
     margin-left: 20px;
 }

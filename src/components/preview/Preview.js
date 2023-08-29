@@ -16,7 +16,7 @@ import SuperDetails from './SuperDetails';
 
 export default function Preview(props) {
 
-  const { preview, invoiceDetails, vendorDetails, clientDetails, itemList, totals, paymentDetails, superDetails, notes, hidePreview } = props
+  const { preview, invoiceDetails, vendorDetails, clientDetails, itemList, totals, paymentDetails, showSuper, superDetails, notes, hidePreview } = props
 
   const pdfContent = useRef(null)
 
@@ -39,14 +39,14 @@ export default function Preview(props) {
         handleDownload={handleDownload}
         handleShare={handleShare}
       />
-      <div>
+      <div className='flex-components'>
         
-        <div className='flex-components'>
+        <div className='flex-col'>
           <VendorDetails vendorDetails={vendorDetails} />
-          <InvoiceDetails invoiceDetails={invoiceDetails} />
+          {showSuper && <SuperDetails superDetails={superDetails} />}
         </div>
-        <div className='flex-components'>
-          <SuperDetails superDetails={superDetails} />
+        <div className='flex-col'>
+          <InvoiceDetails invoiceDetails={invoiceDetails} />
           <ClientDetails clientDetails={clientDetails} />
         </div>
       </div>
